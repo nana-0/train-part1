@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            height: 500px;
+            position: relative;
+        }
+
+        .panner {
+            height: 500px;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: all 1s ease;
+        }
+
+        .p1 {
+            background-color: rgb(232, 232, 232);
+        }
+
+        .p2 {
+            background-color: black;
+        }
+
+        .p3 {
+            background-color: rgb(232, 232, 232);
+        }
+
+        .panner.active {
+            opacity: 1;
+        }
+
+        .panner div {
+            width: 1230px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="panner p1 active">
+            <div>
+                <img src="https://img.alicdn.com/simba/img/TB1fN3WA7CWBuNjy0FaSutUlXXa.jpg" alt="">
+            </div>
+        </div>
+        <div class="panner p2">
+            <div>
+                <img src="https://img.alicdn.com/tps/i4/TB1o_JiAVOWBuNjy0FiSutFxVXa.jpg" alt="">
+            </div>
+        </div>
+        <div class="panner p3">
+            <div>
+                <img src="https://img.alicdn.com/simba/img/TB114X1gBjTBKNjSZFuSuv0HFXa.jpg" alt="">
+            </div>
+        </div>
+    </div>
+    <script>
+        var panner = document.querySelectorAll(".panner");
+        var nowIndex = 0;
+
+        setInterval(function () {
+            panner[nowIndex].classList.remove("active");
+            if (++nowIndex < 3) {
+                panner[nowIndex].classList.add("active"); 
+            }else{
+                nowIndex = 0;
+                panner[nowIndex].classList.add("active");
+            }
+        }, 1000)
+    </script>
+</body>
+
+</html>

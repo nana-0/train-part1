@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 300px;
+            height: 50px;
+            background-color: grey;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 100px auto;
+        }
+
+        .tab {
+            border: rgb(82, 79, 79) 1px solid;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            line-height: 50px;
+        }
+
+        .active {
+            background-color: rgb(240, 240, 240);
+            color: rgb(155, 155, 155);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div data-name="first" class="tab active">first</div>
+        <div data-name="second" class="tab second">second</div>
+        <div data-name="third" class="tab third">third</div>
+    </div>
+
+    <script>
+        var aTab = document.querySelectorAll(".tab");
+
+        for (var i = 0; i < aTab.length; i++) {
+            aTab[i].onclick = function () {
+                this.classList.add("active");
+                location.hash = this.dataset.name;
+                for (var j = 0; j < aTab.length; j++) {
+                        aTab[j].classList.remove("active");
+                    }
+                }
+            }
+            window.onhashchange = function () {
+                var _hash = location.hash.slice(1);
+                for(var i=0;i<aTab.length;i++){
+                    if(aTab[i].dataset.name==_hash){
+                        aTab[i].classList.add("active");
+                    }else{
+                        aTab[i].classList.remove("active");
+                    }
+
+                }
+            }
+        
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,529 @@
+#header{
+    background: #333;
+    height: 40px;
+}
+.list{
+    float: left;
+}
+.list a{
+    color: #b0b0b0;
+    padding: 0 8px;
+    height: 40px;
+    line-height: 40px;
+    border-left: #424242 1px solid;
+}
+.list a:hover{
+    color: #ffffff;
+}
+.list-first a{
+    padding-left: 0px;
+    border: none;
+
+}
+.login-list{
+    float: right;
+
+}
+.cart{
+    float: left;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    cursor: pointer;
+}
+.shopping{
+    color: #b0b0b0;
+    height: 40px;
+    line-height: 40px;
+    width: 120px;
+    background: #424242;
+    text-align: center;
+}
+.shopping-list{
+    width: 320px;
+    height:0px;
+    line-height: 100px;
+    text-align: center;
+    position: absolute;
+    right: 0px;
+    top: 40px;
+    box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    transition: height 0.5s ease;
+    background-color: #ffffff;
+
+}
+.cart:hover .shopping-list{
+    display: block;
+    height: 100px;
+}
+.cart:hover .shopping{
+    background: #ffffff;
+    color: #ff6700;
+}
+.menu{
+    height: 100px;
+}
+.icon-xiaomi{
+    line-height: 55px;
+    text-align: center;
+}
+.logo-box{
+    height: 55px;
+    width: 55px;
+    float: left;
+    margin: 22px 0;
+}
+.logo-box a{
+    height: 55px;
+    width: 55px;
+    color: #ffffff;
+    background: #ff6700;
+    line-height: 55px;
+    text-align: center;
+    float: left;
+}
+.menu-box{
+    margin: 0px 225px;
+}
+.menu-list{
+    line-height: 100px;
+    float: left;
+    font:16px  Helvetica Neue,Helvetica,Arial,Microsoft Yahei,Hiragino Sans GB,Heiti SC,WenQuanYi Micro Hei,sans-serif;
+}
+.menu-list a{
+    color: #333333;
+    padding:0 8px;
+    line-height: 100px;
+}
+.menu-list:hover a{
+    color: #ff6700;
+}
+.search-box{
+    width: 290px;
+    height: 50px;
+    line-height: 100px;
+    float: right;
+    border: 1px solid #e0e0e0;
+    line-height: 100px;
+    margin: 22px -0px;
+}
+.search-box input{
+    text-indent: 10px;
+    width: 240px;
+    height: 50px;
+    border: none;
+    outline: none;
+    float: left;
+    border-right: 1px solid #e0e0e0;
+}
+.search-box button{
+    width: 49px;
+    height: 49px;
+    border-left: 1px solid #e0e0e0;
+    float: left;
+    background:none;
+    border: none;
+
+}
+.search-box input{
+    font:16px  Helvetica Neue,Helvetica,Arial,Microsoft Yahei,Hiragino Sans GB,Heiti SC,WenQuanYi Micro Hei,sans-serif;
+}
+.icon-sousuo{
+    font-size: 20px;
+    font-weight: 1000;
+    color: #616161;
+}
+.search-box:hover button{
+    border: #ffffff;
+    color: #ffffff;
+    background-color: #ff6700;
+}
+.swiper .swiper-content{
+    height: 460px;
+    position: relative;
+}
+.swiper .swiper-content .swiper-nav{
+    background: rgba(105, 101, 101, .6);
+    height: 460px;
+    width: 234px;
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.swiper .swiper-content img{
+    width: 100%;
+    height: 460px;
+    position: absolute;
+    left: 0px;
+    top: 0;
+}
+.swiper .swiper-img .arr-left{
+    width: 41px;
+    height: 70px;
+    line-height: 70px;
+    color: #d3d1d1;
+    position: absolute;
+    left: 238px;
+    margin-top: -35px;
+    top: 50%;
+}
+.swiper .swiper-img .arr-right{
+    width: 41px;
+    height: 70px;
+    line-height: 70px;
+    color: #d3d1d1;
+    position: absolute;
+    left: 1185px;
+    margin-top: -35px;
+    top: 50%;
+}
+.swiper .swiper-img .arr-left:hover,.swiper .swiper-img .arr-right:hover{
+    background: rgba(0, 0, 0, .4);
+}
+.swiper .category a{
+    color: #ffffff;
+    font-size: 14px;
+    font-family: Helvetica Neue,Helvetica,Arial,Microsoft Yahei,Hiragino Sans GB,Heiti SC,WenQuanYi Micro Hei,sans-serif;
+}
+.swiper .category .icon-arr{
+    color: #ffffff;
+}
+.swiper .category li{
+    padding: 0 30px;
+    height: 42px;
+    line-height: 42px;
+}
+.swiper .category i{
+    float: right;
+}
+.swiper .category li:hover{
+    background: #ff6700;
+    cursor: pointer;
+}
+.swiper .category{
+    padding: 20px 0;
+}
+.sub{
+    margin-top: 14px;
+    height: 170px;
+}
+.sub .sub-left{
+    width: 234px;
+    height: 170px;
+    background-color: #5f5750;
+    float: left;
+}
+.sub .sub-left ul{
+    padding: 3px;
+}
+.sub .sub-left li{
+    float: left;
+    width: 75px;
+    height: 82px;
+    color: #fff;
+    font-size: 12px;
+    padding: 18px 3px 0px;
+    text-align: center;
+    box-sizing: border-box;
+    position: relative;
+}
+.sub .sub-left li::before{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 1px;
+    background-color: #665e57;
+    top: -1px;
+    left: 6px;
+
+}
+.sub .sub-left li::after{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 1px;
+    height: 70px;
+    background-color: #665e57;
+    top: 6px;
+    left: 0px;
+
+}
+.sub .sub-left img{
+    display: block;
+    width: 24px;
+    height: 24px;
+    margin: 0 auto 4px;
+}
+.sub .sub-right img{
+    width: 316px;
+    height: 170px;
+    margin-top: 0;
+    margin-left: 14px;
+    float: right;
+    display: block;
+}
+.bg-gray{
+    height: 400px;
+    background: #f5f5f5;
+    overflow: hidden;
+    width: 100%;
+}
+.timer{
+    height: 400px;
+}
+.timer .word{
+    height: 57.6px;
+    overflow: hidden;
+}
+.timer .word span{
+    float: left;
+    margin: 0;
+    font-size: 22px;
+    font-weight: 200;
+    line-height: 58px;
+    color: #333;
+    font-family: Helvetica Neue,Helvetica,Arial,Microsoft Yahei,Hiragino Sans GB,Heiti SC,WenQuanYi Micro Hei,sans-serif;
+}
+.timer .word .arr{
+    margin: 24px 0px 18px 0px;
+}
+.timer .word i{
+    float: right;
+    border: 1px solid #e0e0e0;
+    width: 24px;
+    height: 16px;
+    line-height: 16px;
+    padding: 3px 5px;
+    margin-left: -1px;
+    color: #b0b0b0;
+    text-align: center;
+    cursor: pointer;
+}
+.timer .word .icon-arr{
+    border-left: 1px solid #e0e0e0;
+}
+.timer .items .items-time{
+    border-top: 1px solid #e53935;
+    width: 234px;
+    height: 340px;
+    background-color: #f1eded;
+    text-align: center;
+    padding-top: 39px;
+    float: left;
+}
+.timer .items-time .it-top{
+    font-size: 21px;
+    color: #ef3a3b;
+    padding-top: 15px;
+}
+.timer .items-time .it-img{
+    margin: 25px auto;
+}
+.timer .items-time .it-center{
+    color: rgba(0,0,0,.54);
+    font-size: 15px;
+    font-family: Helvetica Neue,Helvetica,Arial,Microsoft Yahei,Hiragino Sans GB,Heiti SC,WenQuanYi Micro Hei,sans-serif;
+}
+.timer .num{
+    margin: 15px 32px 20px 32px;
+}
+.timer .num .zero{
+    width: 46px;
+    height: 46px;
+    background: #605751;
+    float: left;
+    color: #fff;
+    font-size: 24px;
+    line-height: 46px;
+}
+.timer .num .char{
+    width: 15px;
+    height: 46px;
+    line-height: 46px;
+    color: #605751;
+    float: left;
+    font-size: 25px;
+    text-align: center;
+}
+.timer .items-goods li{
+    border-top: 1px solid #2196f3;
+    width: 234px;
+    height: 380px;
+    background-color: #fff;
+    text-align: center;
+    /* padding-top: 39px; */
+    float: left;
+    margin-left: 14px;
+}
+.timer .items-goods li:nth-child(1){
+    border-top: 1px solid #2196f3;
+}
+.timer .items-goods li:nth-child(1){
+    border-top: 1px solid #e53935;
+}
+.timer .items-goods li:nth-child(1){
+    border-top: 1px solid #00c0a5;
+}
+.timer .items-goods li:nth-child(1){
+    border-top: 1px solid #ffac13;
+}
+.timer .items-goods .igc-img{
+    display: block;
+    width: 160px;
+    margin: 0 auto;
+    padding-top: 39px;
+}
+.timer .items-goods img{
+    width: 160px;
+    height: 160px;
+    margin: 0 auto 22px;
+    text-align: center;
+}
+.timer .items-goods h3{
+    margin: 0 20px 3px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #212121;
+    font-family: Helvetica Neue,Helvetica,Arial,Microsoft Yahei,Hiragino Sans GB,Heiti SC,WenQuanYi Micro Hei,sans-serif;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.timer .items-goods .igc-sub{
+    height: 18px;
+    margin: 0 20px 12px;
+    font-size: 12px;
+    text-overflow: ellipsis;
+    color: #b0b0b0;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.timer .price span{
+    color: #ff6709;
+}
+.timer .price del{
+    color: #b0b0b0;
+}
+.show{
+    width: 100%;
+    height: 1000px;
+    background: #f5f5f5;
+    overflow: hidden;
+}
+.show .show-top img{
+    margin:22px auto;
+    height: 120px;
+}
+.show .show-middle{
+    height: 58px;
+}
+.show .show-middle .sm-left{
+    float: left;
+    font-size: 22px;
+    font-weight: 200;
+    line-height: 58px;
+    color: #333;
+    font-family: Helvetica Neue,Helvetica,Arial,Microsoft Yahei,Hiragino Sans GB,Heiti SC,WenQuanYi Micro Hei,sans-serif;
+}
+.show .show-middle .sm-right{
+    float: right;
+}
+.show .show-middle .arr{
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: #b0b0b0;
+    display: inline-block;
+}
+.show .show-middle .iconfont{
+    height: 5px;
+    width: 5px;
+    padding: 4px;
+    color: #fff;
+}
+.show .show-middle span{
+    font-size: 16px;
+    line-height: 58px;
+    color: #424242;
+    font-family: Helvetica Neue,Helvetica,Arial,Microsoft Yahei,Hiragino Sans GB,Heiti SC,WenQuanYi Micro Hei,sans-serif;
+}
+.show .show-bottom .sb-left{
+    width: 234px;
+    height: 614px;
+    float: left;
+}
+.show .sb-left img{
+    width: 100%;
+}
+.show .sb-right{
+    height: 614px;
+}
+.show .sb-right li{
+    width: 234px;
+    height: 300px;
+    float: left;
+    margin-left: 14px;
+    margin-bottom: 14px;
+    background-color: #fff;
+    text-align: center;
+    position: relative;
+    top: 0;
+}
+.show .sb-right li:hover{
+    position: absolute;
+    top: 2px;
+    cursor: pointer;
+}
+.show .sb-right img{
+    width: 160px;
+    height: 160px;
+    padding: 20px 0;
+}
+.show .sb-right h3{
+    font-weight: 400;
+    font-size: 14px;
+    color:#333;
+    font-family: Helvetica Neue,Helvetica,Arial,Microsoft Yahei,Hiragino Sans GB,Heiti SC,WenQuanYi Micro Hei,sans-serif;
+}
+.show .sb-right p{
+    margin: 0 10px 10px;
+    height: 18px;
+    font-size: 12px;
+    color: #b0b0b0;
+    font-family: Helvetica Neue,Helvetica,Arial,Microsoft Yahei,Hiragino Sans GB,Heiti SC,WenQuanYi Micro Hei,sans-serif;
+}
+.show .sb-right span{
+    color: #ff6700;
+    font-size: 14px;
+    font-family: Helvetica Neue,Helvetica,Arial,Microsoft Yahei,Hiragino Sans GB,Heiti SC,WenQuanYi Micro Hei,sans-serif;
+}
+.show .sb-right del{
+    color: #b0b0b0;
+    font-size: 14px;
+    font-family: Helvetica Neue,Helvetica,Arial,Microsoft Yahei,Hiragino Sans GB,Heiti SC,WenQuanYi Micro Hei,sans-serif;
+}
+.tool-bar{
+    position: fixed;
+    width: 30px;
+    height: 150px;
+    background-color: #ffffff;
+    left: 50%;
+    margin-left: 613px;
+    bottom: 40px;
+}
+.tool-bar .iconfont{
+    color: #757575;
+}
+.tool-bar li{
+    border: 1px solid #f5f5f5;
+    /* width: 30px;
+    height: 30px; */
+    padding: 3px;
+}
+.tool-bar li:hover .iconfont{
+    color: #ff6700;
+    cursor: pointer;
+}

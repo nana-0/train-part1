@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 600px;
+            border: 1px solid black;
+            margin: 20px auto;
+        }
+
+        .clearfix::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .bi {
+            border-bottom: 1px solid black;
+            text-align: center;
+        }
+
+        .bi img {
+            text-align: center;
+            width: 200px;
+            height: 200px;
+        }
+
+        .si img {
+            width: 120px;
+            height: 120px;
+        }
+
+        .si ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        .si li {
+            float: left;
+            list-style: none;
+            text-align: center;
+            width: 24.5%;
+            border-right: 1px solid black;
+        }
+
+        .si li:last-child {
+            border-right: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="bi">
+            <img id="bigImg" src="../images/slider1.jpg" alt="">
+        </div>
+        <div class="si">
+            <ul class="clearfix">
+                <li><img src="../images/slider1.jpg" alt=""></li>
+                <li><img src="../images/slider2.jpg" alt=""></li>
+                <li><img src="../images/slider3.jpg" alt=""></li>
+                <li><img src="../images/slider4.jpg" alt=""></li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        var bigImg = document.getElementById("bigImg");
+        var smallImg = document.getElementsByClassName("si")[0];
+        var imgArr = smallImg.getElementsByTagName("img");
+
+        for (var i = 0; i < imgArr.length; i++) {
+            imgArr[i].onmouseover = function () {
+                var _imgSrc = this.getAttribute("src");
+                bigImg.setAttribute("src", _imgSrc);
+            }
+        }
+    </script>
+</body>
+</html>

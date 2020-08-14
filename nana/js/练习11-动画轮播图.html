@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: black;
+        }
+
+        li {
+            list-style: none;
+
+        }
+
+        .box {
+            margin: 0 auto;
+            border: 5px solid white;
+            width: 490px;
+            height: 160px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .img-content {
+            float: left;
+            margin: 0 auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 2940px;
+        }
+
+        .img-content li {
+            float: left;
+        }
+
+        .btn {
+            position: absolute;
+            bottom: 5px;
+            width: 100%;
+            color: white;
+        }
+
+        .btn .left-btn {
+            float: left;
+        }
+
+        .btn .left-btn li {
+            float: left;
+            border-radius: 50%;
+            background-color: #f90;
+            height: 20px;
+            width: 20px;
+            line-height: 20px;
+            text-align: center;
+            margin: 3px;
+        }
+
+        .btn .right-btn {
+            float: right;
+        }
+
+        .btn .num {
+            float: left;
+            border-radius: 50%;
+            background-color: #f90;
+            height: 20px;
+            width: 20px;
+            line-height: 20px;
+            text-align: center;
+            margin: 3px;
+        }
+
+        .btn .active {
+            background-color: rgb(255, 75, 75);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <ul class="img-content">
+            <li class="imgs"><img src="../images/01.jpg" alt=""></li>
+            <li class="imgs"><img src="../images/02.jpg" alt=""></li>
+            <li class="imgs"><img src="../images/03.jpg" alt=""></li>
+            <li class="imgs"><img src="../images/04.jpg" alt=""></li>
+            <li class="imgs"><img src="../images/05.jpg" alt=""></li>
+            <li class="imgs"><img src="../images/01.jpg" alt=""></li>
+        </ul>
+        <div class="btn">
+            <ul class="left-btn">
+                <li class="arr">&lt;</li>
+                <li class="arr">&gt;</li>
+            </ul>
+            <ul class="right-btn">
+                <li class="num active">1</li>
+                <li class="num">2</li>
+                <li class="num">3</li>
+                <li class="num">4</li>
+                <li class="num">5</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        var aImg = document.getElementsByClassName("img-content")[0];
+        var aArr = document.getElementsByClassName("arr");
+        var aNum = document.getElementsByClassName("num");
+        var oBox = document.getElementsByClassName("box")[0];
+        var clock;
+        var timer;
+        var nowIndex = 0;
+        var nextIndex = 0;
+        var direction = 0;
+        var isRun = true;
+
+        // 切换图片函数
+        function changeImg(index) {
+            if (!isRun) {
+                return false;
+            }
+            isRun = false;
+            nextIndex = index;
+            // 判断方向
+            if (nowIndex == 0 && nextIndex == -1) {
+                direction = 10;
+                aImg.style.left = -2450 + "px";
+                console.log(aImg.style.left, nowIndex, nextIndex);
+            } else if (nextIndex > nowIndex) {
+                direction = -10;
+            } else if (nextIndex < nowIndex) {
+                direction = 10;
+            }
+            // 控制数字按钮选中状态
+            for (var j = 0; j < aNum.length; j++) {
+                aNum[nowIndex].classList.remove("active");
+            }
+            if (nextIndex == 5) {
+                aNum[0].classList.add("active");
+            } else if (nextIndex == -1) {
+                aNum[4].classList.add("active");
+                nextIndex = 4;
+            } else {
+                aNum[nextIndex].classList.add("active");
+            }
+            // 控制图片的滚动
+            timer = setInterval(function () {
+                if (aImg.offsetLeft == -490 * nextIndex) {
+                    clearInterval(timer);
+                    isRun = true;
+                    if (nextIndex == 5) {
+                        nowIndex = 0;
+                        aImg.style.left = 0;
+                    } else {
+                        nowIndex = nextIndex;
+                    }
+                } else {
+                    aImg.style.left = aImg.offsetLeft + direction + "px";
+                }
+            }, 8)
+        }
+
+
+        // 数字按钮事件
+        for (var i = 0; i < aNum.length; i++) {
+            aNum[i].index = i;
+            aNum[i].onclick = function () {
+                changeImg(this.index);
+            }
+        }
+        // 向右按钮
+        aArr[1].onclick = function () {
+            changeImg(nowIndex + 1);
+        }
+        // 向左按钮
+        aArr[0].onclick = function () {
+            changeImg(nowIndex - 1);
+        }
+
+        oBox.onmouseover = function () {
+            clearInterval(clock);
+        }
+        oBox.onmouseout = function () {
+            run();
+        }
+
+        function run() {
+            clock = setInterval(function () {
+                changeImg(nowIndex + 1);
+            }, 2000)
+        }
+
+        run();
+    </script>
+
+</body>
+
+</html>

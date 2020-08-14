@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box-left {
+            width: 300px;
+            height: 300px;
+            float: left;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .box-right {
+            width: 300px;
+            height: 300px;
+            margin-left: 10px;
+            float: left;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .box-left img {
+            width: 300px;
+            height: 300px;
+        }
+
+        .box-right img {
+            width: 900px;
+            height: 900px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .square {
+            width: 100px;
+            height: 100px;
+            background-color: rgba(255, 255, 255, 0.2);
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box-left">
+        <img src="../images/cat.jpg" alt="">
+        <div class="square"></div>
+    </div>
+    <div class="box-right">
+        <img id="img" src="../images/cat.jpg" class="big" alt="">
+    </div>
+    <script>
+        var oSquare = document.getElementsByClassName("square")[0];
+        var oImg = document.getElementById("img");
+        var oBox = document.getElementsByClassName("box-left")[0];
+
+
+        oBox.onmousemove = function (event) {
+
+            var moveLeft = event.clientX - 50;
+            var moveTop = event.clientY - 50;
+
+            if (moveLeft < 0) {
+                moveLeft = 0;
+            }
+            if (moveTop < 0) {
+                moveTop = 0;
+            }
+            if (moveLeft > 200) {
+                moveLeft = 200;
+            }
+            if (moveTop > 200) {
+                moveTop = 200;
+            }
+
+            oSquare.style.left = moveLeft + "px";
+            oSquare.style.top = moveTop + "px";
+
+            oImg.style.left = -3 * moveLeft + "px";
+            oImg.style.top = -3 * moveTop + "px";
+            console.log(-3 * moveTop);
+        }
+
+    </script>
+
+</body>
+
+</html>

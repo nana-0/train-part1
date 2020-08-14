@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">
+        <div class="div1">
+            <span>div1</span>
+            <button class="up-btn">向上</button>
+            <button class="down-btn">向下</button>
+        </div>
+        <div class="div2">
+            <span>div2</span>
+            <button class="up-btn">向上</button>
+            <button class="down-btn">向下</button>
+        </div>
+        <div class="div3">
+            <span>div3</span>
+            <button class="up-btn">向上</button>
+            <button class="down-btn">向下</button>
+        </div>
+    </div>
+
+    <script>
+        var upBtn = document.querySelectorAll(".up-btn");
+        var downBtn = document.querySelectorAll(".down-btn");
+        var oBox = document.querySelector(".box");
+
+
+        for (var i = 0; i < upBtn.length; i++) {
+            //向上
+            upBtn[i].onclick = function () {
+                var parentEl = this.parentElement;
+                var parentBr = parentEl.previousElementSibling;
+                if (parentBr) {
+                    oBox.insertBefore(parentEl, parentBr);
+                }else{
+                    console.log("到顶了");
+                }
+            }
+            //向下
+            downBtn[i].onclick = function () {
+                var parentElDo = this.parentElement;
+                var parentBrDo = parentElDo.nextElementSibling;
+                if (parentBrDo) {
+                    oBox.insertBefore(parentBrDo,parentElDo);
+                }else{
+                    console.log("到底了");
+                }
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>

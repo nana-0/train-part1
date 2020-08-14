@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: black;
+            perspective: 1000px;
+            perspective-origin: 100px -100px;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            border: lightsalmon 2px dashed;
+            position: relative;
+            margin: 100px auto;
+            transform-style: preserve-3d;
+            animation: foo 2s linear infinite;
+        }
+        @keyframes foo{
+            from{
+                transform: rotateY(0);
+            }
+            to{
+                transform: rotateY(360deg);
+            }
+        }
+
+        .side {
+            width: 200px;
+            height: 200px;
+            background-color: rgba(226, 248, 255, 0.2);
+            position: absolute;
+            top: 0;
+            left: 0;
+            border: rgb(226, 248, 255) 1px solid;
+        }
+
+        .num {
+            font-size: 50px;
+            line-height: 200px;
+            text-align: center;
+        }
+
+        .side1 {
+            transform: translateZ(100px);
+        }
+
+        .side2 {
+            transform: rotateX(90deg) translateZ(100px);
+        }
+
+        .side3 {
+            transform:  translateZ(-100px);
+        }
+
+        .side4 {
+            transform: rotateX(90deg) translateZ(-100px);
+        }
+
+        .side5 {
+            transform: rotateY(90deg) translateZ(100px);
+        }
+
+        .side6 {
+            transform: rotateY(-90deg) translateZ(100px);
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="box">
+        <div class="side side1">
+            <div class="num">1</div>
+        </div>
+        <div class="side side2">
+            <div class="num">2</div>
+        </div>
+        <div class="side side3">
+            <div class="num">3</div>
+        </div>
+        <div class="side side4">
+            <div class="num">4</div>
+        </div>
+        <div class="side side5">
+            <div class="num">5</div>
+        </div>
+        <div class="side side6">
+            <div class="num">6</div>
+        </div>
+    </div>
+ 
+</body>
+
+</html>

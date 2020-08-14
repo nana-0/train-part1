@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            margin: 0;
+            padding: 0;
+            width: 100px;
+            height: 100px;
+            background-color: rgb(200, 148, 248);
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <script>
+        var oBox = document.getElementsByClassName("box")[0];
+
+        oBox.onmousedown = function (event) {
+
+            var oBoxTop = oBox.offsetTop;
+            var oBoxLeft = oBox.offsetLeft;
+            var pointX = event.clientX;
+            var pointY = event.clientY;
+
+            var x = pointX - oBoxLeft;
+            var y = pointY - oBoxTop;
+            document.onmousemove = function (event) {
+                console.log(event.clientX - x, event.clientY - y);
+                oBox.style.left = event.clientX - x + "px";
+                oBox.style.top = event.clientY - y + "px";
+
+            }
+
+        }
+        oBox.onmouseup = function () {
+            document.onmousemove = null;
+        }
+    </script>
+
+</body>
+
+</html>

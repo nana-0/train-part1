@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div1{
+            background-color: grey;
+            color: #ffffff;
+            width:100px;
+            height:100px;
+            display:none;
+            position: fixed;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1">
+        <ul>
+            <li>查找</li>
+            <li>返回</li>
+            <li>属性</li>
+        </ul>
+    </div>
+    <script>
+        var rooter=document.documentElement;
+        rooter.oncontextmenu=function(event){
+            event.preventDefault();
+            var oDiv=document.getElementsByClassName("div1")[0];
+            oDiv.style.display = "block";
+            var x = event.clientX;
+            var y = event.clientY;
+            // oDiv.style.position = fixed;
+            oDiv.style.left = x+"px";
+            oDiv.style.top = y+"px";
+
+
+
+        }
+    </script>
+    
+</body>
+</html>

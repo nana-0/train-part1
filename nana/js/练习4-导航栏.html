@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 600px;
+            height: 200px;
+            border: 1px solid black;
+            margin: 100px auto;
+        }
+
+        .box ul {
+            height: 50px;
+            background-color: black;
+        }
+
+        .box li {
+            float: left;
+            list-style: none;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            color: white;
+            padding: 0px 5px;
+        }
+
+        .box .active {
+            background-color: rgb(216, 216, 216);
+            color: rgb(34, 33, 33);
+        }
+
+        .content-text {
+            display: none;
+        }
+
+        .visible {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <ul>
+            <li class="active">第一节课</li>
+            <li>第二节课</li>
+            <li>第三节课</li>
+        </ul>
+        <div class="content">
+            <div class="content-text visible">
+                <h1>1.1</h1>
+            </div>
+            <div class="content-text">
+                <h1>2.1</h1>
+            </div>
+            <div class="content-text">
+                <h1>3.1</h1>
+            </div>
+        </div>
+    </div>
+    <script>
+        var aLi = document.getElementsByTagName("li");
+        var aContent = document.getElementsByClassName("content-text");
+
+        for (var i = 0; i < aLi.length; i++) {
+            aLi[i].index = i;
+            aLi[i].onmousemove = function () {
+                for (var j = 0; j < aLi.length; j++) {
+                        aLi[j].classList.remove("active");
+                        aContent[j].classList.remove("visible");
+                }
+                this.classList.add("active");
+                aContent[this.index].classList.add("visible");
+            }
+
+        }
+    </script>
+</body>
+
+</html>

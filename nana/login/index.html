@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 2000px;
+        }
+
+        .header .h-logo {
+            width: 200px;
+            height: 98px;
+            background-image: url("../images/mistore_logo.png");
+        }
+
+        .middle {
+            width: 100%;
+            height: 588px;
+            background-image: url("../images/bg.jpg");
+            background-position: top center;
+            overflow: hidden;
+        }
+
+        .middle .bg {
+            height: 590px;
+            /* width: 1600px; */
+            /* width: 1130px;
+            margin: 0 auto; */
+
+        }
+
+        .middle .bg .login {
+            width: 410px;
+            height: 600px;
+            background: #ffffff;
+            margin-left: auto;
+            margin-right: 0;
+            margin-top: 30px;
+        }
+
+        .middle .login a.orange {
+            color: #f56600;
+        }
+
+        .middle .login a {
+            color: #666666;
+            font-size: 24px;
+            font-family: Helvetica, arial, "Hiragino Sans GB", "PingFang SC", "Microsoft YaHei", "微軟正黑體", "儷黑 Pro", sans-serif;
+
+        }
+
+        .middle .login .choose {
+            padding: 27px 0 24px;
+            text-align: center;
+        }
+
+        .middle .choose span {
+            border: 1px solid #e0e0e0;
+            margin: 0 35px 0 42px;
+        }
+
+        .middle .form .id {
+            width: 340px;
+            height: 22px;
+            line-height: 22px;
+            border: 1px solid #e0e0e0;
+            padding: 13px 16px 13px 14px;
+            margin: 15px auto;
+        }
+
+        .middle .id input {
+            border: none;
+            outline: none;
+        }
+
+        .middle .btn {
+            text-align: center;
+        }
+
+        .middle .btn input {
+            width: 370px;
+            height: 50px;
+            line-height: 50px;
+            color: #ffffff;
+            background: #f56600;
+            border: none;
+            outline: none;
+            text-align: center;
+            font-size: 14px;
+            font-family: Helvetica, arial, "Hiragino Sans GB", "PingFang SC", "Microsoft YaHei", "微軟正黑體", "儷黑 Pro", sans-serif;
+        }
+
+        .middle .btn input:hover {
+            cursor: pointer;
+        }
+
+        .middle .infor {
+            text-align: center;
+        }
+
+        .middle .infor-top {
+            margin-top: 14px;
+            margin-bottom: 30px;
+        }
+
+        .middle .infor-top a {
+            color: #ff6700;
+        }
+
+        .middle .infor-bottom a,
+        .middle .infor-bottom span {
+            color: #999;
+        }
+
+        .middle .infor a {
+            font-size: 14px;
+        }
+
+        .middle .other {
+            margin-bottom: 50px;
+        }
+
+        .other .other-top {
+            padding-top: 130px;
+        }
+
+        .other .other-top fieldset {
+            text-align: center;
+            border-width: 1px 0 0 0;
+            border-top: 1px solid #e0e0e0;
+            margin: 0 auto;
+        }
+
+        .other .other-top legend {
+            color: #bbbbbb;
+            font-size: 14px;
+            font-family: Helvetica, arial, "Hiragino Sans GB", "PingFang SC", "Microsoft YaHei", "微軟正黑體", "儷黑 Pro", sans-serif;
+        }
+
+        .other .other-bottom li {
+            border-radius: 50%;
+            height: 30px;
+            width: 30px;
+            float: left;
+            margin: 0 17px;
+        }
+
+        .other .other-bottom .qq {
+            background-color: #0288d1;
+        }
+
+        .other .other-bottom .sina {
+            background-color: #d32f2f;
+        }
+
+        .other .other-bottom .alpay {
+            background-color: #0ae;
+        }
+
+        .other .other-bottom .wechat {
+            background-color: #00d20d;
+        }
+
+        .other .other-bottom i {
+            background-image: url(../images/icons_type.png);
+            width: 18px;
+            height: 18px;
+            display: block;
+            margin: 4px auto 0;
+        }
+        .other .other-bottom {
+            margin: 0 auto;
+        }
+
+        .other .qq i {
+            background-position: -19px 0;
+        }
+
+        .other .sina i {
+            background-position: -38px 0;
+        }
+
+        .other .alpay i {
+            width: 25px;
+            height: 19px;
+            background-position: -56px 1px;
+        }
+
+        .other .wechat i {
+            width: 24px;
+            background-position: -83px 0;
+        }
+    </style>
+    <link rel="stylesheet" href="common.css">
+</head>
+
+<body>
+    <div class="content">
+
+        <!-- 头 -->
+        <div class="header wrapper">
+            <div class="h-logo"></div>
+        </div>
+
+        <!-- 中 -->
+        <div class="middle">
+            <div class="bg wrapper">
+                <div class="login">
+                    <div class="choose">
+                        <a class="orange" href="javascript:void(0);">帐号登录</a>
+                        <span></span>
+                        <a href="javascript:void(0);">扫码登录</a>
+                    </div>
+                    <div class="form">
+                        <div class="id">
+                            <input type="text" placeholder="邮箱/手机号码/小米ID">
+                        </div>
+                        <div class="id">
+                            <input type="password" placeholder="密码">
+                        </div>
+                        <div class="btn">
+                            <input type="button" value="登录">
+                        </div>
+                    </div>
+                    <div class="infor">
+                        <div class="infor-top">
+                            <a href="javascript:void(0);">手机短信登录/注册</a>
+                        </div>
+                        <div class="infor-bottom">
+                            <a href="javascript:void(0);">立即注册</a>
+                            <span>|</span>
+                            <a href="javascript:void(0);">忘记密码?</a>
+                        </div>
+                    </div>
+                    <div class="other">
+                        <div class="other-top">
+                            <fieldset>
+                                <legend>其他方式登录</legend>
+                            </fieldset>
+                        </div>
+                        <div class="other-bottom">
+                            <ul>
+                                <li class="qq">
+                                    <i></i>
+                                </li>
+                                <li class="sina">
+                                    <i></i>
+                                </li>
+                                <li class="alpay">
+                                    <i></i>
+                                </li>
+                                <li class="wechat">
+                                    <i></i>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 尾 -->
+        <div class="footer"></div>
+    </div>
+</body>
+
+</html>

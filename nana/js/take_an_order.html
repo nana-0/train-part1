@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var m = window.confirm("你吃了吗？");
+        if (!m) {
+            p = window.prompt("几个人没吃呢？");
+        }
+        for (var i = 1; i <= p; i++) {
+            var menuNum = Math.ceil(Math.random() * 11);
+            var menu;
+            switch (menuNum) {
+                case 1: menu = "蒸羊羔"; break;
+                case 2: menu = "蒸熊掌"; break;
+                case 3: menu = "蒸鹿尾儿"; break;
+                case 4: menu = "烧花鸭"; break;
+                case 5: menu = "烧雏鸡"; break;
+                case 6: menu = "烧子鹅"; break;
+                case 7: menu = "卤猪"; break;
+                case 8: menu = "卤鸭"; break;
+                case 9: menu = "酱鸡"; break;
+                case 10: menu = "腊肉"; break;
+                case 11: menu = "没得吃";
+            }
+            personName = window.prompt("第"+i+"个人叫啥名？");
+            var arr = [];
+            arr.push(i + ":" + personName+"这顿"+menu);
+            document.write("<br/>");
+            document.write(arr);      
+        }
+
+    </script>
+</body>
+
+</html>
