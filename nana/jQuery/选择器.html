@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <ul>
+        <li class="a">na</li>
+        <li class="a">na</li>
+        <li>好</li>
+        <li>美</li>
+    </ul>
+    <input type="button" value="click">
+    <input type="checkbox" checked>
+    <input type="checkbox">
+    <input type="checkbox">
+    <input type="checkbox">
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        $(".a").css("background","lightblue");
+        $("ul").css("list-style","none");
+        $("*").css("margin",0);
+        $("*").css("padding",0);
+
+        $("ul :last-child").css("background","pink");//空格
+        $("ul :nth-child(3)").css("background","lightseagreen");//空格
+        $("li[class = 'a']").css("color","white");
+        $("li:eq(3)").css("height","50px");//不要空格
+
+        $(":button").css("background","lightskyblue");
+
+    </script>
+</body>
+</html>
