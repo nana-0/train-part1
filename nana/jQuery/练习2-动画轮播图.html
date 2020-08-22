@@ -81,8 +81,8 @@
         <div class="content-btn">
             <div class="bc-left">
                 <ul>
-                    <li class="btn-list">&lt;</li>
-                    <li class="btn-list">&gt;</li>
+                    <li class="btn-list prev">&lt;</li>
+                    <li class="btn-list next">&gt;</li>
                 </ul>
             </div>
             <div class="bc-right">
@@ -99,10 +99,50 @@
 
     <script src="jquery-1.12.4.js"></script>
     <script>
+        var iNow = 0;
+        var timer;
 
         $(".num-list").on("click", function () {
-            $(this).addClass("active").siblings().removeClass("active");
-            $("img-list").eq($(this).index()).addClass("active").siblings().removeClass("active");
+            change($(this).index());
+            iNow = $(this).index();
+        })
+
+        $(".next").on("click", function () {
+            iNow++;
+            if (iNow == 5) {
+                iNow = 0;
+            }
+            $(".btn-list").eq(1).addClass("active").siblings().removeClass("active");
+            change(iNow);
+        })
+
+        $(".prev").on("click", function () {
+            iNow--;
+            if (iNow == -1) {
+                iNow = $(".num-list").length - 1;
+            }
+            $(".btn-list").eq(0).addClass("active").siblings().removeClass("active");
+            change(iNow);
+        })
+
+        function change(index) {
+            $(".num-list").eq(index).addClass("active").siblings().removeClass("active");
+            $(".img-list").eq(index).addClass("active").siblings().removeClass("active");
+        }
+
+        function run() {
+            timer = setInterval(function () {
+                $(".next").trigger("click");
+            }, 1000)
+        }
+        run();
+
+        $(".box").on("mouseover", function () {
+            clearInterval(timer);
+        })
+
+        $(".box").on("mouseout", function () {
+            run();
         })
     </script>
 
