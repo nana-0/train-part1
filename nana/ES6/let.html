@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let:
+        //     1.let定义变量 没有变量提升
+        //     2.不能重复声明
+        //     3.块级作用域（在代码块内有效）
+        
+        //1
+
+        // console.log(a);
+        // let a = 12;
+
+        // console.log(b);
+        // var b = 12;
+
+        //2
+        // let a = 12;
+        // let a = 13;
+        // console.log(a);
+
+        // var a = 12;
+        // var a = 13;
+        // console.log(a);
+
+        //3
+        // for(var i = 0; i < 5; i++){
+        //     setTimeout(function(){
+        //         console.log(i);
+        //     },100)
+        // }
+        // for(let i = 0; i < 5; i++){
+        //     setTimeout(function(){
+        //         console.log(i);
+        //     },100)
+        // }
+    </script>
+</body>
+</html>
