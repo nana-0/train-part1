@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Person{
+            constructor(name,age){
+                this.name = name;
+                this.age = age;
+            }
+            say(){
+                console.log("正在说...");
+            }
+            static xx(){
+                console.log("这是一个静态方法");
+            }
+        }
+
+        class Coder extends Person{
+            constructor(name,age){
+                super(name,age);
+            }
+            coding(){
+                console.log(this.name + "正在写程序");
+            }
+        }
+        var p1 = new Person("nana",18);
+        p1.say();
+        console.log(p1);
+
+        var c1 = new Coder("nana",20);
+        c1.say();
+        c1.coding();
+        console.log(c1);
+        Person.xx();
+        Coder.xx();
+    </script>
+</body>
+</html>
