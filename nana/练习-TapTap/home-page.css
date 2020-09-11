@@ -1,0 +1,545 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.nav-header{
+    width: 100%;
+    position: fixed;
+    z-index: 10;
+
+}
+.nav-header .container{
+    background: #14b9c8;
+    width: 100%;
+    height: 54px;
+}
+.nh-left{
+    width: 160px;
+    height: 54px;
+}
+.nh-left .iconfont,span{
+    color: white;
+}
+
+.nh-left .icon-gengduo01{
+    font-size: 35px;
+    font-weight: bold;
+    margin-left: 5px;
+    float: left;
+}
+
+.nh-left .icon-TapTapLogo{
+    font-size: 105px;
+    line-height: 54px;
+       
+}
+
+.nh-left .down-load-App{
+    float: right;
+    height: 54px;
+    width: 14px;
+    position: relative;
+}
+.nh-left .down-load-App .icon-xiazaiapp{
+    font-size:16px;
+    font-weight: 400;
+    position: absolute;
+    top: 25%;
+}
+.nh-left .down-load-App .word{
+    position: absolute;
+    top: 60%;
+    font-size: 1px;
+}
+
+.nh-right{
+    width: 100px;
+    height: 54px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.nh-right .iconfont{
+    color: white;
+    font-size: 18px ;
+    font-weight: bolder;
+    line-height: 54px;
+    margin-left: 5px;
+}
+.nh-right .user{
+    border-radius: 50%;
+    width: 23px;
+    height: 23px;
+    border: 1px solid white;
+    background-color: #fff;
+    position: absolute;
+    left: 50%;
+    margin-left: 15px;
+    top: 30%;
+    overflow: hidden;
+}
+.nh-right .user img{
+    width: 23px;
+    border-radius: 50%;
+}
+.nav-bar{
+    background-color: #fff;
+    width: 100%;
+    height: 47px;
+    line-height: 47px;
+    color: #999999;
+    font-size: 17px;
+    box-shadow: 0 1px 0 0 rgba(238,238,238,.5), 0 0 10px 0 rgba(0,0,0,.08);
+    position: fixed;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.nav-bar a{
+    text-align: center;
+    flex: 1;
+    color: #999999;
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,"PingFang SC","Noto Sans",Roboto,"Microsoft Yahei",sans-serif,Apple Color Emoji,Segoe UI Emoji;
+}
+
+.nav-bar .wrapper{
+    height: 3vh;
+    width: 1px;
+    background-color: #f1f1f1;
+    margin: auto;
+}
+
+.main-container{
+    position: absolute;
+    width: 100%;
+    height: 3000px;
+    margin-top: 54px;
+}
+
+.main-container .feed{
+    position: relative;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+.main-container .feed .recommend{
+    color: #fff;
+    position: absolute;
+    left: 8vw;
+    top: 7vw;
+    font-size: 13px;
+    z-index: 1;
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,"PingFang SC","Noto Sans",Roboto,"Microsoft Yahei",sans-serif,Apple Color Emoji,Segoe UI Emoji;
+}
+.main-container .feed img{
+    border-radius: 2%;
+    width: 381.25px;
+    margin-top: 10px;
+    justify-self: center;
+}
+
+.main-container .feed .feed-info{
+    height: 85px;
+    position: absolute; 
+    bottom: 0;
+    display: flex;
+}
+.main-container .feed .small-img{
+    width: 50px;
+    float: left;
+    border-radius: 10px;
+    margin:4.2vw;
+}
+
+.main-container .feed-info .feed-content{
+
+    align-self: center;
+}
+
+.main-container .feed-info .feed-evaluate{
+    float: right;
+    align-self: center;
+}
+.main-container .feed-info p{
+    color: #fff;
+}
+
+.main-container .feed-info .title{
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.main-container .feed-info .description{
+    font-size: 13px;
+}
+
+.main-container .feed-evaluate .review-num{
+    font-size: 10px;
+    font-weight: 700;
+    position: absolute;
+    right: 15px;
+    top: 25px;
+}
+
+.main-container .feed-evaluate .rating-store{
+    font-size: 16px;
+    position: absolute;
+    right: 15px;
+}
+.main-container .recommend-wall{
+    height: 231px;
+    overflow: hidden;
+    margin-left: 18px;
+    position: relative;
+}
+
+.main-container .list-title{
+    height: 30px;
+    margin: 30px 0 22px;
+}
+
+.main-container .main-title{
+    font-size: 20px;
+    font-weight: bolder;
+    color: black;
+    line-height: 30px;
+
+}
+
+.main-container .more{
+    font-size: 14px;
+    font-weight: 400;
+    color: #14B9C8;
+    float: right;
+    line-height: 30px;
+    
+}
+
+.main-container .recommend-wall .slider-container{
+    width: 1029px;
+    height: 148px;
+    position: absolute;
+}
+.main-container .recommend-wall .slider{
+    width: 325px;
+    height: 148px;
+    background-color: #f8f8f8;
+    border-radius: 3%;
+    margin-right: 18px;
+    float: left;
+}
+
+.main-container .line{
+    margin-top: 15px;
+    width: 100%;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.main-container .feed-recatangle{
+    position: relative;
+    margin-top: 35px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+}
+.main-container .feed-recatangle .recommend{
+    color: #999999;
+    position: absolute;
+    left: 4vw;
+    top: -5vw;
+    font-size: 13px;
+    z-index: 1;
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,"PingFang SC","Noto Sans",Roboto,"Microsoft Yahei",sans-serif,Apple Color Emoji,Segoe UI Emoji;
+}
+.main-container .feed-recatangle .big-img{
+    border-radius: 6px;
+    width: 381.25px;
+    margin: 10px auto;
+}
+
+.main-container .feed-recatangle .feed-content{
+    position: absolute;
+    bottom: 0;
+    left: 80px;
+}
+
+.main-container .feed-recatangle .feed-info{
+    height: 50px;
+    margin-bottom: 3px;
+}
+.main-container .feed-recatangle .small-img{
+    width: 50px;
+    height: 50px;
+    float: left;
+    border-radius: 10px;
+    margin-right:3.2vw;
+}
+
+.main-container .feed-recatangle .feed-evaluate{
+    float: right;
+    height: 50px;
+    width: 100px;
+    position: relative;
+}
+
+.main-container .feed-recatangle .title{
+    font-size: 16px;
+    font-weight: 700;
+    color: black;
+}
+
+.main-container .feed-recatangle .description{
+    font-size: 13px;
+    color: #999999;
+
+}
+
+.main-container .feed-recatangle .review-num{
+    position: absolute;
+    right: 0px;
+    color: #14B9C8;
+    top: 10px;
+}
+
+.main-container .feed-evaluate .rating-store-rec{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.main-container .feed-recatangle .icon-xingxing{
+    color: #14B9C8; 
+    font-size: 16px;
+}
+
+.main-container .feed-recatangle .score{
+    color: #14B9C8; 
+    font-size: 18px;
+}
+
+.main-container .from-project{
+    height: 225px;
+}
+
+.main-container .from-project .title{
+    font-size: 13px;
+    color: #999;
+    margin-top: 12px;
+    margin-bottom: 10px;
+}
+.main-container .from-project .games{
+    height: 154px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+}
+
+.from-project .games .game1{
+    border-radius: 5px;
+    position: absolute;
+    width: 39%;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%,-50%,0) rotate(30deg);
+}
+
+.from-project .games .game2{
+    border-radius: 5px;
+    position: absolute;
+    width: 25%;
+    top: -2%;
+    left: 16%;
+    transform: translate3d(-50%,-50%,0) rotate(30deg);
+}
+
+.from-project .games .game3{
+    border-radius: 5px;
+    position: absolute;
+    width: 25%;
+    top: 101%;
+    left: 84%;
+    transform: translate3d(-50%,-50%,0) rotate(30deg);
+}
+
+.from-project .games .game4{
+    border-radius: 5px;
+    position: absolute;
+    width: 39%;
+    top: 10%;
+    left: 101%;
+    transform: translate3d(-50%,-50%,0) rotate(30deg);
+}
+
+.from-project .games .game5{
+    border-radius: 5px;
+    position: absolute;
+    width: 39%;
+    top: 76%;
+    left: -2%;
+    transform: translate3d(-50%,-50%,0) rotate(30deg);
+}
+
+.from-project .games .game6{
+    border-radius: 5px;
+    position: absolute;
+    width: 25%;
+    top: -27%;
+    left: 68%;
+    transform: translate3d(-50%,-50%,0) rotate(30deg);
+}
+
+.from-project .games .game7{
+    border-radius: 5px;
+    position: absolute;
+    width: 25%;
+    top: 125%;
+    left: 32%;
+    transform: translate3d(-50%,-50%,0) rotate(30deg);
+}
+
+.from-project .games .big-img{
+    width: 100%;
+}
+
+.main-container .from-project .week-game{
+    font-size: 16px;
+    line-height: 50px;
+    color: #333;
+    font-weight: 700;
+}
+
+.main-container .coming-soon{
+    height: 231px;
+    overflow: hidden;
+    margin-left: 18px;
+    margin-bottom: 25px;
+    margin-top: -10px;
+    position: relative;
+}
+
+.main-container .coming-soon .slider-container{
+    width: 1029px;
+    position: absolute;
+    margin-bottom: 5px;
+}
+.main-container .coming-soon .slider{
+    width: 75px;
+    height: 120px;
+    border-radius: 3%;
+    margin-right: 18px;
+    float: left;
+}
+
+.main-container .slider .date{
+    font-size: 12px;
+    color: #999;
+    margin-bottom: 5px;
+}
+
+.main-container .slider .app-img{
+    width: 77.35px;
+}
+
+.main-container .slider .app-name{
+    font-size: 14px;
+    color: black;
+    font-weight: 700;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.main-container .more-games{
+    height: 100px;
+    position: relative;
+}
+
+.main-container .more-games button{
+    width: 89px;
+    height: 42px;
+    background-color: #12A7B4;
+    border-radius: 5px;
+    color: white;   
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -44px;
+    margin-top: -21px;
+    font-size: 18px;
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,"PingFang SC","Noto Sans",Roboto,"Microsoft Yahei",sans-serif,Apple Color Emoji,Segoe UI Emoji;
+}
+.nav-footer{
+    height: 581px;
+    background-color: #666666;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.nav-footer .event-links span{
+    color: #999999;
+}
+.nav-footer .list-style{
+    display: flex;
+    flex-direction: row;
+    width: 303.25px;
+    margin: 0 auto;
+}
+.nav-footer .list-style li{
+    width: 40px;
+    height: 40px;
+    flex: 1;
+    font-size: 40px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border-radius: 40px;
+    box-shadow: 0px 3px 0 rgba(0,0,0,.3);
+}
+
+.nav-footer .list-style li:nth-child(1){
+    color: #2d4485;
+    background-color: #fff;
+}
+.nav-footer .list-style li:nth-child(2){
+    color: #54be36;
+    background-color: #fff;
+}
+.nav-footer .list-style li:nth-child(3){
+    color: #2c5c8f;
+    background-color: #fff;
+}
+.nav-footer .list-style li:nth-child(4){
+    color: #0f7dfd;
+    background-color: #fff;
+}
+.nav-footer .list-style li:nth-child(5){
+    color: #ff0014;
+    background-color: #fff;
+}
+.nav-footer .list-style li:nth-child(6){
+    color: #1998a5;
+    background-color: #fff;
+    margin-right: 0;
+}
+.nav-footer .links{
+    display: flex;
+    flex-direction: row;
+}
+.nav-footer .links li{
+    flex: 1;
+}
+.nav-footer li,p,div{
+    color: #999999;
+}
+.nav-footer .icon-TapTapLogo{
+    color: #1998a5;
+    font-size: 50px;
+}
+.nav-footer .small-elements span{
+    color: #999999;
+}
+.nav-footer .small-elements img{
+    width: 15px;
+}
