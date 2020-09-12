@@ -95,6 +95,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    position: relative;
 }
 .nav-bar a{
     text-align: center;
@@ -543,3 +544,23 @@
 .nav-footer .small-elements img{
     width: 15px;
 }
+.block{
+    display: none;
+}
+.visible{
+    display: block;
+}
+.nav-bar .active {
+    color: #14B9C8;
+    font-weight: 700;
+}
+.nav-bar .underline{
+    width: 20px;
+    height: 0;
+    border-bottom: 4px solid #14B9C8;
+    top: 43px;
+    left: 60px;
+    position: absolute;
+    flex: 1;
+}
+
