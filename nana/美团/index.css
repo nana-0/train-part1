@@ -1,0 +1,87 @@
+body{
+    font-family: Hiragino Sans GB, Arial, Helvetica, "\5B8B\4F53", sans-serif;
+}
+header{
+    width: 100%;    
+    background-color: black;
+    display: flex;
+}
+header .position{
+    color: #ffffff;
+    height: 50px;
+    line-height: 50px;
+}
+header .position .icon-location{
+    font-size: 20px;
+}
+header .position .present-position{
+    font-size: 16px;
+
+}
+header .search{
+    width: 100px;
+    height: 30px;
+    flex: 1;
+    border-radius: 20px;
+    line-height: 50px;
+    background-color:rgb(235, 235, 228);
+    margin: 10px 10px 10px 25px;
+    display: flex;
+    overflow: hidden;
+}
+header .search .icon-sousuozhengchangzhuangtai{
+    line-height: 30px;
+    margin-left: 10px;
+}
+header .search input{
+    margin-left: 20px;
+    margin-right: 5px;
+    flex: 1;
+    background-color: rgb(235, 235, 228);
+    border: none;
+}
+.cate-box{
+    display: flex;
+    text-align: center;
+    flex-wrap: wrap;
+}
+.cate-box .cate-list img{
+    width: 44px;
+    flex: 1;
+    margin: 10px 10px 0;
+}
+.cate-box .cate-list div{
+    font-size: 11px;
+}
+.store .store-title{
+    text-align: center;
+    font-size: 17px;
+    color: #333333;
+    margin-top: 10px;
+}
+.store .store-title::before,.store-title::after{
+    content: "";
+    display: inline-block;
+    width: 33px;
+    height: 1px;
+    background-color: #666666;
+    vertical-align: middle;
+    transform: scaleY(.5);
+} 
+
+.store-box{
+    padding: 10px;
+}
+.store-box .store-list{
+    flex: 1;
+    display: flex;
+}
+.store-box .store-list .info-box{
+    flex: 1;
+    margin-left: 10px;
+}
+.store-box .store-img img{
+    width: 4.56rem;
+    height: 3.50rem;
+    border: 1px solid #e4e4e4;
+}
