@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model = "proName">
+        <button @click = "add">添加</button>
+        <ul>
+            <li v-for = "obj in list">{{obj}}<button>delete</button></li>
+        </ul>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                list:[
+                    "苹果",
+                    "香蕉"
+                ],
+                proName:''
+            },
+            methods:{
+                add(){
+                    this.list.push(this.proName);
+                    this.proName = "";
+                }
+            }
+        })
+    </script>
+</body>
+</html>
