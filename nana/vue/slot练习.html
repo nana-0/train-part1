@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h1>父组件</h1>
+        <my-component content="我来自xxx" @xx="callback"></my-component>
+        <my-component name="我是李四" content="我来自yyy"></my-component>
+    </div>
+    <div id="app2">
+    </div>
+
+    <template id="temp1">
+        <div>
+            <h2>{{name}} {{count}}</h2>
+            <p>{{content}}</p>
+            <button @click = "add()">click</button>
+        </div>
+    </template>
+
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el:'#app',
+            data:{
+                msg:'默认值'
+            },
+            methods:{
+                callback(count){
+                    console.log(count);
+                    this.msg = count;
+                }
+            },
+            components:{
+                'my-component':{
+                    template:'#temp1',
+                    props:{
+                        name:{
+                            type:String,
+                            default:"我是组件"
+                        },
+                        content:String
+                    },
+                    data(){
+                        return{
+                            count:0
+                        }
+                    },
+                    methods:{
+                        add(){
+                            this.count++;
+                            this.$emit('xx',this.count)
+                        }
+                    }
+                }
+            }
+
+        })
+    </script>
+</body>
+</html>

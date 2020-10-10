@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <h2>firstname: {{firstname}}</h2>
+        <h2>lastname: {{lastname}}</h2>
+        <h2>fullname: {{fullname}}</h2>
+        <button @click="change()">click</button>
+    </div>
+
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                firstname: 'zhang',
+                lastname: 'san'
+            },
+            computed: {
+                fullname: {
+                    get() {
+                        return this.firstname + " " + this.lastname;
+
+                    },
+                    set(newVal) {
+                        console.log(newVal);
+                        let arr = newVal.split(" ");
+                        this.firstname = arr[0];
+                        this.lastname = arr[1];
+                    }
+                }
+
+            },
+            methods: {
+                change() {
+                    this.fullname = "li si";
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
