@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home'
 import Test from '../views/Test'
 import A from './../views/A'
+import IVueX from '@/views/Vuex'
 
 Vue.use(VueRouter)
 
@@ -25,6 +26,10 @@ const routes = [
   {
     path:'/test',
     component: Test
+  },
+  {
+    path:'/vuex',
+    component:IVueX
   },
   {
     path: '/about',
