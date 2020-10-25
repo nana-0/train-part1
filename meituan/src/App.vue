@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    meituan
+    <router-view></router-view>
   </div>
 </template>
 
