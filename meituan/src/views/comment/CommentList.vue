@@ -1,7 +1,7 @@
 <template>
   <div class="body-box">
     <div class="bubble">
-      <div v-for="obj in list.label" :key="obj.id" @click="change(obj.id)" class="list"> {{ obj.name }} {{ obj.count }} </div>
+      <div :class="{active:obj.id == typeId}" v-for="obj in list.label" :key="obj.id" @click="change(obj.id)" class="list"> {{ obj.name }} {{ obj.count }} </div>
     </div>
     <div class="evaluation">
       <ul class="list-box">
@@ -20,12 +20,18 @@
 <script>
 export default {
   props: ["list"],
+  data(){
+    return{
+      typeId:1
+    }
+  },
   created() {
     console.log(this.list);
   },
   methods: {
     change(id) {
       this.$emit('update', id);
+      this.typeId=id;
     }
   },
 };
@@ -45,6 +51,10 @@ export default {
     color: #666;
     margin-right: 5px;
     padding: 0 0.1rem;
+    &.active{
+        background: #fffbf1;
+        border:1px solid #ffb000;
+      }
   }
 }
 .list-box {
