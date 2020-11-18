@@ -5,6 +5,7 @@ import store from './store'
 // 引入common.css
 import '@/assets/css/common.css'
 import '@/assets/js/rem.js'
+import '@/assets/font/iconfont.css'
 // 引入有赞组件库
 import Vant from 'vant';
 import 'vant/lib/index.css';

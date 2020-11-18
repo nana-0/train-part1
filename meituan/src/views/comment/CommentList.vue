@@ -65,6 +65,9 @@ export default {
       height: 0.8rem;
       border-radius: 50%;
     }
+    .list-info{
+      flex:1;
+    }
   }
 }
 </style>
