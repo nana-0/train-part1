@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = [
+            {addressid: 22,addressname: "學府三"},
+            {addressid: 21,addressname: "把鼠標墊"},
+            {addressid: 44,addressname: "從手機存即可生成"},
+            {addressid: 36,addressname: "菜市場"},
+            {addressid: 99,addressname: "的倒數多"},
+
+        ]
+        console.log(arr);
+        var arr3 = arr.map(function(item,index,arr){
+            return item;
+        })
+        console.log(arr3);
+
+        var arr4 = arr.map(function(item,index,arr){
+            return {address:item.addressname};
+        })
+        console.log(arr4);
+    </script>
+    
+</body>
+</html>
