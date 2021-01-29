@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div{
+            width: 300px;
+            /* height: 100px; */
+            background-color: lightseagreen;
+            /* overflow: hidden; */
+        }
+        #div1{
+            width: 100px;
+            height: 100px;
+            background-color: lightsalmon;
+            /* float: left; */
+        }
+        #div2{
+            width: 100px;
+            height: 100px;
+            background-color: lightskyblue;
+            /* float: right; */
+        }
+        #div3{
+            clear: both;
+        }
+        .clearfix::after{
+            content:"";
+            display: block;
+            clear: both;
+            /*  1.::after使用了伪元素，
+                  即在元素的后面添加一个“伪”的元素 
+                2.使用伪元素时，必须设置content，
+                  因为要设置伪元素的内容是什么，
+                  而我们只是为了清除浮动，所以设置为空
+                3.我们要将其设置为块级元素，
+                  此时他的宽高就可以自动和父元素一致
+                  从未解决浮动塌陷
+            */
+        }
+    </style>
+</head>
+<body>
+    <div id="div">
+    <!-- <div id="div" class="clearfix"> -->
+        <div id="div1">div1</div>
+        <div id="div2">div2</div>
+        <!-- <div id="div3"></div> -->
+    </div>
+</body>
+</html>
