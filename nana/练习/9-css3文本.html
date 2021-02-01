@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 150px;
+            height: 50px;
+            /* float: left; */
+            line-height: 50px;
+            text-shadow: 2px 2px 5px black;
+            white-space: nowrap;/*设置成单行文本 */
+            overflow: hidden;/*溢出隐藏*/
+        }
+        #div1{
+            background-color: lightsalmon;
+            word-wrap: normal;
+            text-overflow: clip;
+        }
+        #div2{
+            background-color: lightskyblue;
+            word-wrap: break-word;
+            text-overflow: ellipsis;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">有文本阴影，只在允许的断字点换行，文本溢出后修剪</div>
+    <div id="div2">有文本阴影，在长单词内部换行，文本溢出后显示省略号代表修剪的文本</div>
+</body>
+</html>
