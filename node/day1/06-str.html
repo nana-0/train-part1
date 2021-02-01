@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str = '{"id":1,"name":"nana"}';
+        // alert(typeof(str));//显示为string
+        // var strobj = eval("("+str+")");//字符串转对象
+        // alert(typeof(strobj));//显示为object
+        var strbj = JSON.parse(str);//string-->object object-->string stringfy
+        alert(typeof(strobj));
+    </script>
+    
+</body>
+</html>
