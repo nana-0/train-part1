@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+            perspective: 1000px;
+        }
+        div{
+            border: lightskyblue 2px solid;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+            background-color: lightsalmon;
+            color: lightseagreen;
+            transition: all 2s;
+            margin:100px auto 20px;
+            float:left;
+        }
+        #div1{
+            margin-left: 500px;
+        }
+        #div1:hover{
+            transform-style: preserve-3d;
+            transform: translateX(20px) rotateX(180deg) scale(.7,.7) ;
+        }
+        #div2:hover{
+            transform-style: preserve-3d;
+            transform: translateX(20px) rotateZ(180deg) rotateX(90deg) rotateY(90deg) scaleX(.5) scaleY(.5) ;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">CSS3 3D转换 方块1</div>
+    <div id="div2">CSS3 3D转换 方块2</div>
+</body>
+</html>
