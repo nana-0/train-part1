@@ -1,0 +1,18 @@
+Node
+1、Node能做什么   中间层、后端逻辑、系统流程工具(CI/CD)、serverless
+2、安装Node  windows(安装包) Linux(yum install node/ Linux源码安装)
+   node版本(开发、运维)  如何看当前系统的版本 node -v
+   可以一个OS安装多个版本吗? npm install -g n
+3、执行node命令 shell   
+   windows cmdshell powershell yarn bower gitshell
+   Linux  linux shell/iterm shell
+   MacOS  iTerm shell gitshell
+4、创建webServer ---后端逻辑  PHP--Apache、Nginx  JavaWeb--Tomcat resin Weblogic
+   node有三种模块  原生模块、第三方模块(用require加载 不需要使用路径)、自定义模块(加载路径)
+
+5、node单进程 事件循环 异步回调 安装nodemon  supervisor  pm2 
+   npm install -g supervisor
+
+6、buffer fs stream
+
+用fs和递归的方式 写一个文件夹下的 文件和文件遍历?

@@ -63,7 +63,7 @@ function dealWithStatic(pathname,realPath,res) {
 					res.end();
 				}
 			})
-		//}
+	//	}
 	//})
 
 }
