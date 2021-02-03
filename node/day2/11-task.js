@@ -70,7 +70,7 @@ process.nextTick(function A(){
 })
 */
 
-//14332
+//1432
 
 setTimeout(function C(){
 	console.log(3);
@@ -85,7 +85,7 @@ process.nextTick(function A(){
 	console.log(4);
 })
 
-//14233  
+//1423 
 /*
 setImmediate(function(){
 	console.log('setImmediate延迟执行1');
