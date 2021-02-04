@@ -1,0 +1,62 @@
+python  conda  pip 
+Linux 
+redhat(centos REHL Fedrao rpm) ---yum install 
+debian(deb) ---apt-get install
+
+var http=require("http")
+(1)http.js
+(2)http文件夹  index.js
+
+npm run dev  npm run test npm run build
+
+
+NPM命令
+
+npm install 第三方包 安装在当前的项目目录的node_modules
+npm install -g cnpm node安装文件夹node_modules
+npm list -g  列举出全局安装的包有哪些
+npm list -g supervisor 显示这个包的版本号
+
+npm install -g nodemon pm2 cnpm 
+
+卸载相关
+npm uninstall 
+npm update  更新安装的npm包  npm install -g npm
+npm search  搜索npm包
+
+清除本地缓存 npm cache clear 
+
+如何创建自己的模块 
+npm init
+
+如何发布模块
+
+
+模块--原生模块 第三方模块 自定义模块
+commonJS---AMD&CMD(requireJS SeaJS)---NodeJS
+define---创建模块  require---加载模块 文件1--文件2
+1.js--scrirt src="2.js"  script src=3.js
+2.js---var a=1  3.js console.log(a);
+
+
+小落的叶子
+1、div id=container
+2、requireJS  script src="js/require.js" data-main="js/index"
+3、index.js 四个叶子-->叶子类 for(var i=0;i<4;i++){} --循环出四个叶子
+4、每个叶子外部属性都不相同 {width,left,container}  new Leaf -leaf.js
+5、index.js  leaf.js  模块调用模块  require.js
+6、leaf.js 使用define来定义模块
+
+Node封装、继承
+
+1、父类拥有一种方法把父类的成员属性 成员方法拷贝给子类
+Java、PHP、ES6---extends  Child extends Parent
+ES5&Node call方法 Parent.call(this);
+
+2、子类要具备一种方法可以调用到父类的构造函数
+PHP---construct()---parent::__constructor()
+Java、ES6---super()
+ES5---  Child.prototype=Parent.prototype  Child.prototype.constructor=Child
+Node---util.inherits  constructor.super_
+
+Node---events.EventEmitter

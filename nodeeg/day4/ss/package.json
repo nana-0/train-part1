@@ -1,0 +1,20 @@
+{
+  "name": "sword",
+  "version": "1.0.0",
+  "description": "crypto the string",
+  "main": "index.js",
+  "config":{
+    "port":8091
+  },
+  "scripts": {
+    "test": "node index.js",
+    "prebuild": "echo I run before the build script",
+    "build": "node start.js",
+    "postbuild": "echo I run after the build script"
+  },
+  "keywords": [
+    "md5"
+  ],
+  "author": "swordshine",
+  "license": "ISC"
+}
