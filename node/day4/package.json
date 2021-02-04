@@ -1,0 +1,18 @@
+{
+  "name": "nana",
+  "version": "1.0.0",
+  "description": "crypto the string",
+  "main": "2-package.js",
+  "config": {
+    "port":8091
+  },
+  "scripts": {
+    "test": "node 2-package.js",
+    "start": "node start.js -- 8090"
+  },
+  "keywords": [
+    "md5"
+  ],
+  "author": "nana0",
+  "license": "ISC"
+}
