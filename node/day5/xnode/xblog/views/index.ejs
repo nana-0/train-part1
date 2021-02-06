@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    
+    <table border=1>
+      <tr>
+        <th>索引</th>
+        <th>名字</th>
+      </tr>
+      <% names.forEach(function(name,index){ %>
+        <tr>
+          <td><%= index%></td>
+          <td><%= name%></td>
+        </tr>
+      <% }) %>
+      
+
+    </table>
+  </body>
+</html>
