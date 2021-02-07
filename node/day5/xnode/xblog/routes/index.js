@@ -42,6 +42,9 @@ router.get("/b",a,function(str,req,res,next){
 //通过路由来响应两个控制器下面的方法  User.aa  User.bb
 router.get("/c",User.aa,User.bb);
 
+router.get("/reg",User.reg);
+router.post("/reg",User.do_reg);
+
 router.get("/login",User.login);
 router.post("/login",User.do_login);
 
