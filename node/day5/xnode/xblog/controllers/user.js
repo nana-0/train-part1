@@ -1,5 +1,6 @@
 const { send } = require("process");
 var querystring = require("querystring");
+var User_module = require("../modules/user_module.js");
 
 exports.reg = function (req, res, next) {
     res.render("reg");
@@ -11,22 +12,32 @@ exports.do_reg = function (req, res, next) {
     var pass = req.body.pwd;
 
     //console.log(email+"||"+name+"||"+pass);
-    var mysql = require('mysql');
-    var connection = mysql.createConnection({
-        host: 'localhost',
-        user: 'root',
-        password: '',
-        database: 'mysql'
-    });
+    User_module.get_all_users(function(err,data){
+        if(err){
+            console.log(err);
+            return
+        }else{
+            console.log(data);
+        }
 
-    connection.connect();
+    })
+    // var mysql = require('mysql');
+    // var connection = mysql.createConnection({
+    //     host: 'localhost',
+    //     user: 'root',
+    //     password: '',
+    //     database: 'mysql'
+    // });
 
-    connection.query('SELECT 1 + 1 AS solution', function (error, results, fields) {
-        if (error) throw error;
-        console.log('The solution is: ', results[0].solution);
-    });
+    // connection.connect();
 
-    connection.end();
+    // connection.query('select * from t_users', function (error, results, fields) {
+    //     if (error) throw error;
+    //     //console.log('The solution is: ', results[0].solution);
+    //     console.log(results);
+    // });
+
+    // connection.end();
 }
 
 exports.aa = function (req, res, next) {
