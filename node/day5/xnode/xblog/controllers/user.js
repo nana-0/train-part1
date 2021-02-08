@@ -1,6 +1,5 @@
-const { send } = require("process");
 var querystring = require("querystring");
-var User_module = require("../modules/user_module.js");
+var User_module = require("../models/user_model.js");
 
 exports.reg = function (req, res, next) {
     res.render("reg");
@@ -11,16 +10,34 @@ exports.do_reg = function (req, res, next) {
     var name = req.body.name;
     var pass = req.body.pwd;
 
-    //console.log(email+"||"+name+"||"+pass);
-    User_module.get_all_users(function(err,data){
+    User_module.insert_name_bypass(email,name,pass,function(err,data){
         if(err){
             console.log(err);
-            return
+            return;
         }else{
-            console.log(data);
-        }
+            //console.log(data);
+            if(data.affectedRows == 1){
+                //跳转登录页面
+                //res.redirect("/login");
+                res.json({
+                    'errno':1,
+                    'msg':'用户注册成功'
+                })
 
-    })
+            }
+        }
+    });
+
+   // console.log(email+"||"+name+"||"+pass);
+    // User_module.get_all_users(function(err,data){
+    //     if(err){
+    //         console.log(err);
+    //         return
+    //     }else{
+    //         console.log(data);
+    //     }
+    // }
+    // })
     // var mysql = require('mysql');
     // var connection = mysql.createConnection({
     //     host: 'localhost',
