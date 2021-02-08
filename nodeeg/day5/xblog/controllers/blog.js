@@ -4,6 +4,6 @@ exports.index=function(req,res,next){
 	res.render("index",{
 		'title':'Express',
 		'names':arr,
-		'sess':req.session,
+		'sess':req.session
 	})
 }

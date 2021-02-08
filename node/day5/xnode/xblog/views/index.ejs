@@ -1,26 +1,41 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-    
+
+<head>
+  <title><%= title %></title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <h1><%= title %></h1>
+  <p>Welcome to <%= title %></p>
+
+  <br />
+  <%if(sess.id){%>
+  <%= sess.name %> 已登录
+  <%}else{%>
+  游客
+  <%}%>
+
+  <a href="/unlogin">退出</a>
+  <a href="/login">登录</a>
+
+    <br />
+
     <table border=1>
       <tr>
         <th>索引</th>
         <th>名字</th>
       </tr>
       <% names.forEach(function(name,index){ %>
-        <tr>
-          <td><%= index%></td>
-          <td><%= name%></td>
-        </tr>
-      <% }) %>
-      
+  <tr>
+    <td><%= index%></td>
+    <td><%= name%></td>
+  </tr>
+  <% }) %>
 
-    </table>
-  </body>
+
+  </table>
+</body>
+
 </html>

@@ -1,7 +1,8 @@
-const e = require('express');
+//const e = require('express');
 var express = require('express');
 var router = express.Router();
-var User = require("../controllers/user");
+var User = require("../controllers/user.js");
+var Blog = require("../controllers/blog.js");
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -42,10 +43,18 @@ router.get("/b",a,function(str,req,res,next){
 //通过路由来响应两个控制器下面的方法  User.aa  User.bb
 router.get("/c",User.aa,User.bb);
 
+//测试async和Promise同步变异步的
+router.get("/m",User.mm);
+
 router.get("/reg",User.reg);
 router.post("/reg",User.do_reg);
+router.post("/checkname",User.checkname);
 
 router.get("/login",User.login);
 router.post("/login",User.do_login);
+router.get("/unlogin",User.unlogin);
+
+
+router.get("/index",Blog.index);
 
 module.exports = router;

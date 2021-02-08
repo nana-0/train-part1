@@ -2,6 +2,7 @@ const { rejects } = require("assert");
 const { resolve } = require("path");
 var querystring = require("querystring");
 var User_model = require("../models/user_model.js");
+var util = require("util");
 
 //new Promise().then  async/await
 async function nn() {
@@ -210,14 +211,44 @@ exports.yy = function (req, res, next) {
     res.send(str);
 }
 
+exports.unlogin = function(req,res,next){
+    //console.log(req.session);
+    req.session = null;
+    res.redirect("/index");
+}
+
 exports.login = function (req, res, next) {
     res.render("login");
 }
 
 exports.do_login = function (req, res) {
     //用什么样的方式传  就用对应的方式接受
-    var name = req.body.username;
-    var pass = req.body.pass;
-    console.log(name);
-    console.log(pass);
+
+    // var name = req.body.username;
+    // var pass = req.body.pass;
+    // console.log(name);
+    // console.log(pass);
+
+    var email = req.body.email;
+    var pass = req.body.pwd;
+
+    User_model.sel_name_by_pass(email,pass,function(err,data){
+        if(err){
+            console.log(err);
+            return;
+        }else{
+            if(data.length>0){
+                //console.log("登录成功");
+                //cookie-session express-session
+                //res.redirect("/");
+                // req.session = data;
+                // console.log(util.inspect(req.session));
+                req.session.id=data[0].USER_ID;
+                req.session.name = data[0].NAME;
+                res.redirect("/index");
+            }else{
+                res.redirect("/login");
+            }
+        }
+    })
 }
