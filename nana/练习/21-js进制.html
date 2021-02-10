@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a = 0x20;//十六进制
+        console.log(a);//输出十进制
+        console.log(a.toString(2));//输出二进制
+        console.log(a.toString(8));//输出八进制
+        console.log(a.toString(16));//输出十六进制
+        //输出   32  10000  40  20
+
+        var a = 32;//十进制
+        console.log(a);//输出十进制
+        console.log(a.toString(2));//输出二进制
+        console.log(a.toString(8));//输出八进制
+        console.log(a.toString(16));//输出十六进制
+        //输出  32  10000  40  20
+
+        var b = 010;//八进制
+        console.log(b.toString(2));
+        console.log(b.toString(8));
+        //输出   1000  10
+
+        var b = 0b10;//二进制
+        console.log(b.toString(2));
+        console.log(b.toString(8));
+        //输出   10   2
+    </script>
+</body>
+</html>
