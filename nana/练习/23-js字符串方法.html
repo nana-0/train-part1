@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str = "Hello world! A new world!";
+        console.log(str.length);                 //25
+        console.log(str.indexOf("world"));       //6
+        console.log(str.lastIndexOf("world,1")); //-1
+        console.log(str.slice(-6,-1));           //world
+        console.log(str.substring(0,5));         //Hello
+        console.log(str.substr(0,5));            //Hello
+        console.log(str.replace("world","China"));//Hello China! A new world!
+        console.log(str.charAt(0));               //H
+        console.log(str.split(" "));              //(5) ["Hello", "world!", "A", "new", "world!"]
+    </script>
+</body>
+</html>
