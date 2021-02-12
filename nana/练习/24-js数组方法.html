@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = ["html","css","javascript"];
+
+        var str = arr.toString();
+        console.log(str);
+        //输出  html,css,javascript
+
+        var str2 = arr.join(" ");
+        console.log(str2);
+        //输出  html css javascript
+
+        var arr2 = arr.pop();
+        console.log(arr);
+        //输出  ["html", "css"]
+        console.log(arr2);
+        //输出  javascript
+
+        var arr3 = arr.push("javascript");
+        console.log(arr);
+        //输出  ["html", "css", "javascript"]
+        console.log(arr3);
+        //输出  3
+
+        var arr4 = arr.splice(2,1,"js");
+        console.log(arr);
+        //输出  ["html", "css", "js"]
+        console.log(arr4);
+        //输出  ["javascript"]
+
+        var arr5 = arr.concat(arr,["css3","html5"],arr,arr);
+        console.log(arr5);
+        //输出  ["html", "css", "js", "html", "css", "js", "css3", "html5", "html", "css", "js", "html", "css", "js"]
+
+        var arr6 = arr.slice(1,2);
+        console.log(arr);
+        //输出  ["html", "css", "js"]
+        console.log(arr6);
+        //输出  ["css"]
+
+        var arr7 = arr.reverse();
+        console.log(arr7);
+        //输出  ["js", "css", "html"]
+
+
+    </script>
+</body>
+</html>
