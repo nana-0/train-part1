@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="div1">Hello</div>
+    <!-- <img src="./image/cat2.jpg" alt="" name="cat" class="imgs" id="img1"> -->
+    <script>
+        //var oImg = document.getElementById("img1");
+        //var oImg = document.getElementsByClassName("imgs")[0];
+        //var oImg = document.getElementsByTagName("img")[0];
+        // var oImg = document.getElementsByName("cat")[0];
+        // console.log(oImg);
+        //均输出  <img src="./image/cat2.jpg" alt name="cat" class="imgs" id="img1">
+
+        var oDiv1 = document.getElementById("div1");
+        oDiv1.innerText = "World";
+        //输出 World
+        oDiv1.innerHTML = "Hello";
+        //输出 Hello
+        oDiv1.innerText = "<h1>World</h1>";
+        //输出  <h1>World</h1>
+        oDiv1.innerHTML = "<h1>World</h1>";
+        //输出带h1标签样式的  World
+
+        oDiv1.style.width = "300px";
+        oDiv1.style.height = "300px";
+        oDiv1.style.backgroundColor = "lightblue";
+        oDiv1.style.textAlign = "center";
+        oDiv1.style.lineHeight = "300px";
+
+
+
+
+
+    </script>
+</body>
+
+</html>
