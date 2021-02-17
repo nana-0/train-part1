@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1 {
+            width: 300px;
+            height: 300px;
+            margin-top: 30px;
+            margin-left: 30px;
+            background-color: lightsalmon;
+            color: lightseagreen;
+            text-align: center;
+            line-height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div1">
+        测试鼠标触发事件
+    </div>
+    <script>
+        var oDiv = document.getElementById("div1");
+
+        // oDiv.onclick = function () {
+        //     oDiv.innerText = "鼠标左键点击";
+        //     oDiv.style.backgroundColor = "lightblue";
+        // }
+        // oDiv.oncontextmenu = function () {
+        //     oDiv.innerText = "鼠标右键点击";
+        //     oDiv.style.backgroundColor = "lightpink";
+        //     event.preventDefault();//阻止默认行为
+        // }
+
+        // oDiv.onmouseover = function () {
+        //     oDiv.innerText = "鼠标移入";
+        //     oDiv.style.backgroundColor = "lightblue";
+        // }
+        // oDiv.onmouseout = function () {
+        //     oDiv.innerText = "鼠标移出";
+        //     oDiv.style.backgroundColor = "lightpink";
+        // }
+
+        // oDiv.onmousedown = function () {
+        //     oDiv.innerText = "鼠标按下";
+        //     oDiv.style.backgroundColor = "lightblue";
+        // }
+        // oDiv.onmouseup = function () {
+        //     oDiv.innerText = "鼠标抬起";
+        //     oDiv.style.backgroundColor = "lightpink";
+        // }
+        var i = 0;
+        oDiv.onmousemove = function () {
+            oDiv.innerText = "鼠标移动" + i + "次";
+            oDiv.style.backgroundColor = "lightblue";
+            i++;
+        }
+
+
+    </script>
+
+</body>
+
+</html>
