@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bgc{
+            background-color: lightpink;
+            width: 300px;
+            height: 300px;
+            color: lightblue;
+            text-align: center;
+            line-height: 300px;
+            text-shadow: black 2px 2px 2px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">控制DOM类名</div>
+    <button id="btn">点击</button>
+    <script>
+        var oDiv = document.getElementById("div1");
+        var oBtn = document.getElementById("btn");
+
+        oBtn.onclick = function () {
+            //oDiv.setAttribute("class","bgc");
+            //oDiv.className = "bgc";
+            oDiv.classList.add("bgc");
+        }
+        oDiv.onclick = function () {
+            oDiv.classList.remove("bgc");
+        }
+    </script>
+</body>
+</html>
