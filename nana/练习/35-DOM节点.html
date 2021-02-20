@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1">
+        aaa
+        <span>我是第一个span</span>
+        <span>我是第二个span</span>
+    </div>
+    <ul id="list1">
+        <li>我是第一个li</li>
+        <li>我是第二个li</li>
+    </ul>
+    <script>
+        var oDiv = document.querySelector("#div1");
+        //console.log(oDiv.parentNode);
+        // console.log(oDiv.nextSibling)
+        // console.log(oDiv.nextElementSibling);
+        // console.log(oDiv.childNodes);
+        // console.log(oDiv.children);
+        var rNode = oDiv.parentNode.children[1];
+        console.log(rNode);
+    </script>
+</body>
+</html>
