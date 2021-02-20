@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="div1" class="test">获取DOM2</div>
+    <div class="test">获取DOM2</div>
+    <script>
+        // var oDiv = document.querySelector("#div1");
+
+        // oDiv.style.width = "100px";
+        // oDiv.style.height = "100px";
+        // oDiv.style.backgroundColor = "lightblue";
+        // console.log(oDiv);
+
+        // var oTest = document.querySelector(".test");
+        // oTest.style.width = "100px";
+        // oTest.style.height = "100px";
+        // oTest.style.backgroundColor = "lightblue";
+        // console.log(oTest);
+
+        var aTest = document.querySelectorAll(".test");
+        console.log(aTest);
+        for (var i = 0; i < aTest.length; i++) {
+            aTest[i].style.width = "100px";
+            aTest[i].style.height = "100px";
+            aTest[i].style.backgroundColor = "lightblue";
+            console.log(aTest[i]);
+        }
+
+
+
+    </script>
+</body>
+
+</html>
