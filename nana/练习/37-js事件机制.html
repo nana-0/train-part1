@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1" style="width: 300px; height: 300px; background-color: cornflowerblue; text-align: center;">div1
+        <div id="div2" style="width: 200px; height: 200px; background-color: coral;margin: 25px auto;text-align: center;">div2
+            <div id="div3" style="width: 100px; height: 100px; background-color: lightpink; text-align: center; line-height: 100px;margin: 25px auto;">
+                div3
+            </div>
+        </div>
+    </div>
+    <script>
+        var oDiv1 = document.querySelector("#div1");
+        var oDiv2 = document.querySelector("#div2");
+        var oDiv3 = document.querySelector("#div3");
+
+        // 事件冒泡
+        oDiv1.addEventListener("click",function(){
+            console.log("div1");
+        },false);
+        oDiv2.addEventListener("click",function(){
+            console.log("div2");
+        },false);
+        oDiv3.addEventListener("click",function(){
+            console.log("div3");
+            //event.stopPropagation();//阻止事件冒泡
+        },false);//3 2 1
+
+        // 事件捕获
+        oDiv1.addEventListener("click",function(){
+            console.log("div1");
+        },true);
+        oDiv2.addEventListener("click",function(){
+            console.log("div2");
+        },true);
+        oDiv3.addEventListener("click",function(){
+            console.log("div3");
+        },true);//1 2 3
+
+    </script>
+</body>
+</html>
