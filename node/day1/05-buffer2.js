@@ -10,7 +10,7 @@
 // const buf1 = Buffer.allocUnsafe(str.length);
 
 // for(let i = 0;i<str.length;i++){
-//     buf[i] = srt.charCodeAt(i);
+//     buf1[i] = str.charCodeAt(i);
 // }
 // console.log(buf1.toString('ascii'));
 
