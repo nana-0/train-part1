@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="list">
+    </ul>
+    <button id="btn">click</button>
+    <script>
+        var num = 1;
+        var oUl = document.querySelector("#list");
+        var oBtn = document.querySelector("#btn");
+
+        oBtn.addEventListener("click", function () {
+            var newLi = document.createElement("li");
+            oUl.appendChild(newLi);
+            newLi.innerText = num++;
+        })
+        oUl.addEventListener("click",function (event) {
+            //目标节点
+            console.log(event.target);
+            //目标节点内容
+            console.log(event.target.innerText);
+            //事件源
+            console.log(event.currentTarget);  
+        })
+    </script>
+</body>
+
+</html>
