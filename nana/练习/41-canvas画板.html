@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div style="width: 500px; height: 50px; text-align: center; line-height: 50px; border: 3px dotted lightskyblue; box-sizing: border-box;">canvas画板</div>
+    <canvas id="can" width="500px" height="500px" style="background-color: black; border: 5px solid dimgrey;"></canvas>
+    <script>
+        var oCan = document.querySelector("#can");
+        var ctx = oCan.getContext("2d");
+
+        var gradient =ctx.createLinearGradient(0,0,500,0);
+        gradient.addColorStop("0","hotpink");
+        gradient.addColorStop("0.25","lightsalmon");
+        gradient.addColorStop("0.5","lightgreen");
+        gradient.addColorStop("0.75","lightpink");
+        gradient.addColorStop("1.0","lightskyblue");
+        ctx.strokeStyle = gradient;
+
+        oCan.onmousedown = function (event) {
+            ctx.beginPath();
+            ctx.moveTo(event.clientX,event.clientY-50);
+            oCan.onmousemove = function (event) {
+                ctx.lineTo(event.clientX,event.clientY-50); 
+                ctx.stroke();
+            }
+        }
+        oCan.onmouseup = function () {
+            oCan.onmousemove = null;
+        }
+        
+    </script>
+</body>
+</html>

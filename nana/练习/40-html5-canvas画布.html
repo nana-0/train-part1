@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="can" width="300px" height="300px" style="border: 2px solid lightsalmon; background-color: black;"></canvas>
+    <script>
+        var oCan = document.querySelector("#can");
+        var canContext = oCan.getContext("2d");
+        var gradient = canContext.createLinearGradient(0,0,200,0);
+        gradient.addColorStop("0","lightsalmon");
+        gradient.addColorStop("0.5","lightblue");
+        gradient.addColorStop("1.0","lightpink");
+
+        canContext.strokeStyle = gradient;
+        canContext.lineWidth = 5;
+        canContext.beginPath();
+        canContext.moveTo(50,50);
+        canContext.lineTo(250,50);
+        canContext.lineTo(250,130);
+        canContext.lineTo(50,130);
+        canContext.lineTo(50,230);
+        canContext.lineTo(250,230);
+        canContext.stroke();
+    </script>
+</body>
+</html>
