@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="pause" onclick="pause()">播放/暂停</button>
+    <button onclick="increase()">增大音量</button>
+    <button onclick="decrease()">减小音量</button>
+    <div>
+        <audio id="myMusic" src="./music/The Man - Taylor Swift.mp3" width="500" controls = "controls"></audio>
+    </div>
+
+    <script>
+        var myMusic = document.querySelector("#myMusic");
+        function pause() {
+            if (myMusic.paused) {
+                myMusic.play();
+            } else {
+                myMusic.pause();
+            }
+        }
+        function increase(){
+            console.log(myMusic.volume);
+            myMusic.volume = myMusic.volume+0.05;
+            if(myMusic.volume > 0.99){
+                alert("音量已达到最大！")
+                return
+            }
+        }
+        function decrease(){
+            console.log(myMusic.volume);
+            myMusic.volume = myMusic.volume-0.05;
+            if(myMusic.volume < 0.01){
+                alert("音量已达到最小！")
+                return
+            }
+        }
+    </script>
+</body>
+
+</html>

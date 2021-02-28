@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="pause" onclick="pause()">播放/暂停</button>
+    <button onclick="increase()">增大音量</button>
+    <button onclick="decrease()">减小音量</button>
+    <div>
+        <video id="myVideo" src="./video/Taylor Swift-willow(蓝光).mp4" width="500" controls = "controls"></video>
+    </div>
+
+    <script>
+        var myVideo = document.querySelector("#myVideo");
+        function pause() {
+            if (myVideo.paused) {
+                myVideo.play();
+            } else {
+                myVideo.pause();
+            }
+        }
+        function increase(){
+            console.log(myVideo.volume);
+            myVideo.volume = myVideo.volume+0.05;
+            if(myVideo.volume > 0.99){
+                alert("音量已达到最大！")
+                return
+            }
+        }
+        function decrease(){
+            console.log(myVideo.volume);
+            myVideo.volume = myVideo.volume-0.05;
+            if(myVideo.volume < 0.01){
+                alert("音量已达到最小！")
+                return
+            }
+        }
+    </script>
+</body>
+
+</html>
