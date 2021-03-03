@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // document.cookie = "username = nana;";
+        // var coo = document.cookie;
+        // console.log(coo);
+
+        var timer = new Date();
+        timer.setDate(timer.getDate() + 1);
+        console.log(timer.toUTCString());
+        document.cookie = "username=nanana;expires=" + timer.toUTCString() + ";path = /";//根据世界时，将Date转换为字符串
+
+        console.log(document.cookie);
+
+
+
+    </script>
+
+</body>
+
+</html>
