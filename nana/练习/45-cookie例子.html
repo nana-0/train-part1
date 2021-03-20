@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 设置cookie
+        function setCookie(key, value, expires) {
+            var timer = new Date();
+            timer.setDate(timer.getDate() + expires);
+            //console.log(timer);
+            document.cookie = key + "=" + value + ";expires=" + timer.toGMTString();
+        }
+
+        // 获取cookie
+        function getCookie(key) {
+            var _cookie = document.cookie;
+            _cookie = _cookie.split(";");
+            //console.log(_cookie);
+            for (var i = 0; i < _cookie.length; i++) {
+                var keyvalue = _cookie[i].split("=");
+                //console.log(keyvalue);
+                if (key = keyvalue[0].trim()) {        //移除字符串两端的空格
+                    //console.log(keyvalue[1]);
+                    return keyvalue[1]
+                }
+            }
+        }
+
+        // 删除cookie
+        function deleteCookie(key) {
+            var timer = new Date();
+            timer.setDate(timer.getDate() - 1);
+            document.cookie = key + "=" + null + ";expires=" + timer.toUTCString();
+        }
+
+        // 测试
+        function test() {
+            var user = getCookie("username");
+            console.log(user);
+            if (user != undefined) {
+                alert(user + "再次访问！");
+            } else {
+                user = prompt("请输入用户名：", "");
+                if (user != "" && user != null)
+                    setCookie("username", user, 1);
+            }
+        }
+
+
+        // setCookie("username", "nana", 1);
+        // setCookie("userage", 18, 1);
+
+        // getCookie();
+        
+        test();
+
+        //deleteCookie("userage");
+    </script>
+</body>
+
+</html>
