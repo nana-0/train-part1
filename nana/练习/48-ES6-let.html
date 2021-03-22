@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1. let定义变量没有变量提升  var会变量提升
+
+        //console.log(a);
+        //let a = 10;    //报错 Cannot access 'a' before initialization
+
+        console.log(b);
+        var b = 10;      //undefined
+
+        // 2. 不能重复声明
+
+        // let c = 10;
+        // let c = 20;
+        // console.log(c);  //报错  Identifier 'c' has already been declared
+
+        var c = 10;
+        var c = 20;
+        console.log(c);     //20
+
+        // 3. 在代码块内有效（块级作用域）
+
+        for(let i = 0; i < 5; i++){
+            setTimeout(function () {
+                console.log(i);     //0 1 2 3 4
+            },100)
+        }
+
+        for(var i = 0; i < 5; i++){
+            setTimeout(function () {
+                console.log(i);      //5 5 5 5 5
+            },100)
+        }
+
+    </script>
+</body>
+
+</html>
