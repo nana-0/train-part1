@@ -6,8 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .red{
+        .red {
             background-color: red;
+        }
+
+        .show {
+            display: block;
+        }
+
+        .hide {
+            display: none;
         }
     </style>
 </head>
@@ -29,13 +37,15 @@
                             id: 1,
                             name: '苹果',
                             price: 1,
-                            isCheck:false
+                            isCheck: false,
+                            show: true
                         },
                         {
                             id: 2,
                             name: '香蕉',
                             price: 2,
-                            isCheck:false
+                            isCheck: false,
+                            show: true
                         }
                     ]
                 }
@@ -43,6 +53,8 @@
                 this.change = this.change.bind(this);
                 this.del = this.del.bind(this);
                 this.deleteAll = this.deleteAll.bind(this);
+                this.search = this.search.bind(this);
+
             }
             //添加方法
             add(obj) {
@@ -51,38 +63,64 @@
                 list.push({
                     ...obj,
                     id: new Date().getTime(),
-                    isCheck:false
+                    isCheck: false,
+                    show: true
                 })
                 this.setState({
                     list: list
                 })
             }
             //修改勾选状态
-            change(index){
-                let {list} = this.state;
+            change(index) {
+                let { list } = this.state;
                 list[index].isCheck = !list[index].isCheck;
                 this.setState({
                     list
                 })
             }
             //删除
-            del(index,e){
-                let {list} = this.state;
-                list.splice(index,1);
+            del(index, e) {
+                let { list } = this.state;
+                list.splice(index, 1);
 
                 this.setState({
                     list
                 })
                 e.stopPropagation();
             }
-            deleteAll(){
-               let {list} = this.state;
-               let result = list.filter((obj)=>{
-                   return obj.isCheck==false
-               }) 
-               this.setState({
-                   list:result
-               })
+            deleteAll() {
+                let { list } = this.state;
+                let result = list.filter((obj) => {
+                    return obj.isCheck == false
+                })
+                this.setState({
+                    list: result
+                })
+            }
+            total() {
+                let { list } = this.state;
+                let sum = 0;
+                list.forEach((obj) => {
+                    if (obj.isCheck) {
+                        sum += obj.price;
+                    }
+                })
+                return sum;
+            }
+            //修改元素show的状态
+            search(val) {
+                let { list } = this.state;
+                list.forEach((obj) => {
+                    if (obj.name.includes(val)) {
+                        obj.show = true;
+                    }
+                    else {
+                        obj.show = false;
+                    }
+                })
+                this.setState({
+                    list
+                })
             }
             render() {
                 return (
@@ -90,14 +128,14 @@
                         <h2>TodoList</h2>
                         <hr />
                         <Add addfn={this.add}></Add>
-                        <Search></Search>
-                        <List list = {this.state.list} change = {this.change} del = {this.del}></List>
+                        <Search search={this.search}></Search>
+                        <List list={this.state.list} change={this.change} del={this.del}></List>
                         <button onClick={this.deleteAll}>删除选中</button>
-                        <span>总价11</span>
+                        <span>总价{this.total()}</span>
                     </div>
                 )
             }
-            
+
         }
         class Add extends React.Component {
             constructor() {
@@ -107,16 +145,16 @@
                 return (
                     <div>
                         <span>名称:</span>
-                        <input type="text" ref={(input)=>{this.name=input}}/>
+                        <input type="text" ref={(input) => { this.name = input }} />
                         <span>价格:</span>
-                        <input type="text" ref={(input)=>{this.price=input}}/>
-                        <button onClick={()=>{
+                        <input type="text" ref={(input) => { this.price = input }} />
+                        <button onClick={() => {
                             this.props.addfn({
-                                name:this.name.value,
-                                price:this.price.value
+                                name: this.name.value,
+                                price: this.price.value
                             });
-                            this.name.value="";
-                            this.price.value="";
+                            this.name.value = "";
+                            this.price.value = "";
                         }}>添加</button>
                     </div>
                 )
@@ -129,8 +167,10 @@
             render() {
                 return (
                     <div>
-                        <input type="text" />
-                        <button>搜索</button>
+                        <input type="text" ref={(input) => { this.myInput = input }} />
+                        <button onClick={() => {
+                            this.props.search(this.myInput.value)}
+                        }>搜索</button>
                     </div>
                 )
             }
@@ -140,22 +180,32 @@
                 super();
             }
             render() {
-                const {list,change,del} = this.props;
+                const { list, change, del } = this.props;
                 return (
                     <ul>
                         {
-                            list.map((obj,index) => {
+                            list.map((obj, index) => {
+                                let clsName = "";
+                                if (obj.isCheck) {
+                                    clsName += "red";
+                                }
+                                if (obj.show) {
+                                    clsName += " show";
+                                } else {
+                                    clsName += " hide";
+                                }
+
                                 return (
                                     <li key={obj.id}
-                                    className={obj.isCheck?'red':''}
-                                    onClick={()=>{
-                                        change(index);
-                                    }}>
-                                        <input type="checkBox" checked={obj.isCheck}/>
+                                        className={clsName}
+                                        onClick={() => {
+                                            change(index);
+                                        }}>
+                                        <input type="checkBox" checked={obj.isCheck} />
                                         <span>{obj.name}</span>
                                         <span>{obj.price}</span>
-                                        <button onClick={(e)=>{
-                                            del(index,e);
+                                        <button onClick={(e) => {
+                                            del(index, e);
                                         }}>删除</button>
                                     </li>
                                 )
