@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red{
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="babel.min.js"></script>
+
+    <script type="text/babel">
+        class Main extends React.Component {
+            constructor() {
+                super();
+                this.state = {
+                    list: [
+                        {
+                            id: 1,
+                            name: '苹果',
+                            price: 1,
+                            isCheck:false
+                        },
+                        {
+                            id: 2,
+                            name: '香蕉',
+                            price: 2,
+                            isCheck:false
+                        }
+                    ]
+                }
+                this.add = this.add.bind(this);
+                this.change = this.change.bind(this);
+                this.del = this.del.bind(this);
+                this.deleteAll = this.deleteAll.bind(this);
+            }
+            //添加方法
+            add(obj) {
+                //向list数组中添加一个元素
+                let { list } = this.state;
+                list.push({
+                    ...obj,
+                    id: new Date().getTime(),
+                    isCheck:false
+                })
+                this.setState({
+                    list: list
+                })
+            }
+            //修改勾选状态
+            change(index){
+                let {list} = this.state;
+                list[index].isCheck = !list[index].isCheck;
+                this.setState({
+                    list
+                })
+            }
+            //删除
+            del(index,e){
+                let {list} = this.state;
+                list.splice(index,1);
+
+                this.setState({
+                    list
+                })
+                e.stopPropagation();
+            }
+            deleteAll(){
+               let {list} = this.state;
+               let result = list.filter((obj)=>{
+                   return obj.isCheck==false
+               }) 
+               this.setState({
+                   list:result
+               })
+            }
+            render() {
+                return (
+                    <div>
+                        <h2>TodoList</h2>
+                        <hr />
+                        <Add addfn={this.add}></Add>
+                        <Search></Search>
+                        <List list = {this.state.list} change = {this.change} del = {this.del}></List>
+                        <button onClick={this.deleteAll}>删除选中</button>
+                        <span>总价11</span>
+                    </div>
+                )
+            }
+            
+        }
+        class Add extends React.Component {
+            constructor() {
+                super();
+            }
+            render() {
+                return (
+                    <div>
+                        <span>名称:</span>
+                        <input type="text" ref={(input)=>{this.name=input}}/>
+                        <span>价格:</span>
+                        <input type="text" ref={(input)=>{this.price=input}}/>
+                        <button onClick={()=>{
+                            this.props.addfn({
+                                name:this.name.value,
+                                price:this.price.value
+                            });
+                            this.name.value="";
+                            this.price.value="";
+                        }}>添加</button>
+                    </div>
+                )
+            }
+        }
+        class Search extends React.Component {
+            constructor() {
+                super();
+            }
+            render() {
+                return (
+                    <div>
+                        <input type="text" />
+                        <button>搜索</button>
+                    </div>
+                )
+            }
+        }
+        class List extends React.Component {
+            constructor() {
+                super();
+            }
+            render() {
+                const {list,change,del} = this.props;
+                return (
+                    <ul>
+                        {
+                            list.map((obj,index) => {
+                                return (
+                                    <li key={obj.id}
+                                    className={obj.isCheck?'red':''}
+                                    onClick={()=>{
+                                        change(index);
+                                    }}>
+                                        <input type="checkBox" checked={obj.isCheck}/>
+                                        <span>{obj.name}</span>
+                                        <span>{obj.price}</span>
+                                        <button onClick={(e)=>{
+                                            del(index,e);
+                                        }}>删除</button>
+                                    </li>
+                                )
+
+                            })
+                        }
+                    </ul>
+                )
+            }
+        }
+        ReactDOM.render(
+            <Main></Main>,
+            document.getElementById("root")
+        )
+    </script>
+</body>
+
+</html>
