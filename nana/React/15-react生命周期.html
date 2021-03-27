@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="babel.min.js"></script>
+
+    <script type="text/babel">
+        class Main extends React.Component {
+            constructor() {
+                super();
+                console.log('constructor');
+                this.state = {
+                    count: 0
+                }
+            }
+            componentWillMount() {
+                console.log('componentWillMount');
+            }
+            componentDidMount() {
+                console.log('componentDidMount');
+            }
+            componentWillReceiveProps() {
+                console.log('componentWillReceiveProps');
+            }
+            shouldComponentUpdate(nProps, nState) {
+                console.log('');
+                return true;
+            }
+            componentWillUpdate() {
+                console.log('componentWillUpdate')
+            }
+            componentDidUpdate() {
+                console.log('componentDidUpdate')
+            }
+            componentWillUnmount() {
+                console.log('componentWillUnmount');
+            }
+            render() {
+                console.log('render');
+                return (
+                    <div>
+                        <h2>{this.state.count}</h2>
+                        <button onClick={() => {
+                            this.setState({
+                                count: this.state.count + 1
+                            })
+                        }}>click</button>
+                        <button onClick={() => {
+                            ReactDOM.unmountComponentAtNode(document.getElementById('root'));
+                        }}>卸载</button>
+                        <Child count={this.state.count}></Child>
+                    </div>
+                )
+            }
+        }
+        class Child extends React.Component {
+            constructor() {
+                super();
+                console.log('child constructor');
+            }
+            componentWillMount() {
+                console.log('child componentWillMount')
+            }
+            componentDidMount() {
+                console.log('child componentDidMount')
+            }
+
+            componentWillReceiveProps() {
+                console.log('child componentWillReceiveProps');
+            }
+            shouldComponentUpdate(nProps, nState) {
+                console.log('child shouldComponentUpdate');
+                return true;
+            }
+            componentWillUpdate() {
+                console.log('child componentWillUpdate')
+            }
+            componentDidUpdate() {
+                console.log('child componentDidUpdate')
+            }
+            render(){
+                console.log('child render')
+                return (
+                    <h5>{this.props.count}</h5>
+                )
+                
+            }
+        }
+        ReactDOM.render(
+            <Main></Main>,
+            document.getElementById("root")
+        )
+    </script>
+</body>
+
+</html>
