@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function fn(a,b,c){
+            console.log(arguments[0]); // 输出: 1
+            console.log(arguments[1]); // 输出: 2
+            console.log(arguments[2]); // 输出: 3
+            console.log(arguments);    // 输出: Arguments(3) [1, 2, 3, callee: ƒ, Symbol(Symbol.iterator): ƒ]
+        }
+        fn(1,2,3);
+
+
+        // var arr = Array.prototype.slice.call(arguments);
+        // var arr = [].slice.call(arguments);
+        
+        // // ES6
+        // const arr = Array.from(arguments);
+        // const arr = [...arguments]; 
+    </script>
+</body>
+</html>
